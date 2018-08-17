@@ -1,0 +1,6 @@
+framework module Earth {
+  umbrella header "Earth-umbrella.h"
+
+  export *
+  module * { export * }
+}

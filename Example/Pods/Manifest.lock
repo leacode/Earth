@@ -1,0 +1,16 @@
+PODS:
+  - Earth (0.1.0)
+
+DEPENDENCIES:
+  - Earth (from `../`)
+
+EXTERNAL SOURCES:
+  Earth:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Earth: 5b9ca3ce35cd9c3af2d6b757bb60b511c687f952
+
+PODFILE CHECKSUM: 46a4d1351259bd2dcb6614cdfcd47d71dea0cd9a
+
+COCOAPODS: 1.5.0
