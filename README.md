@@ -1,5 +1,7 @@
 # Earth
 
+An easy to use framework to pick names,dial codes,flags and emojis of countries all around the world.
+
 [![CI Status](https://img.shields.io/travis/leacode/Earth.svg?style=flat)](https://travis-ci.org/leacode/Earth)
 [![Version](https://img.shields.io/cocoapods/v/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
 [![License](https://img.shields.io/cocoapods/l/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
@@ -27,3 +29,5 @@ leacode, lichunyu@vip.qq.com
 ## License
 
 Earth is available under the MIT license. See the LICENSE file for more info.
+
+
