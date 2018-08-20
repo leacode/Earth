@@ -6,8 +6,8 @@ env:
   global:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
-  - IOS_WORKSPACE="Example/ios/Earth.xcworkspace"
-  - MACOS_WORKSPACE="Example/macos/Earth_Macos.xcworkspace"
+  - IOS_WORKSPACE=Example/ios/Earth.xcworkspace
+  - MACOS_WORKSPACE=Example/macos/Earth_Macos.xcworkspace
   - IOS_FRAMEWORK_SCHEME="Earth-Example"
   - MACOS_FRAMEWORK_SCHEME="Earth_Macos"
   matrix:
