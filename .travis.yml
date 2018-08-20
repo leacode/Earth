@@ -5,5 +5,5 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example/ios/
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/ios/Earth.xcworkspace -scheme Earth-Example -sdk iphonesimulator11.4 ONLY_ACTIVE_ARCH=NO | xcpretty -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4'
+- set -o pipefail && xcodebuild test -workspace Example/ios/Earth.xcworkspace -scheme Earth-Example -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4'
 - pod lib lint
