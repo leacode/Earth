@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Earth_Example' do
+  pod 'Earth', :path => '../../'
+
+  target 'Earth_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

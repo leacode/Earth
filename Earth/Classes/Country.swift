@@ -6,7 +6,11 @@
 //  Copyright © 2018 leacode. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 public class Country: Codable {
 
@@ -23,6 +27,7 @@ public class Country: Codable {
     public var emoji: String
     
     /// vector image of the country's flag
+    #if os(iOS)
     public var flag: UIImage? {
         
         let frameworkBundle = Bundle(for: CountryKit.self)
@@ -32,6 +37,18 @@ public class Country: Codable {
         let image = UIImage(named: code.uppercased(), in: resourceBundle, compatibleWith: nil)
         return image
     }
+    #elseif os(macOS)
+    public var flag: NSImage? {
+        
+        let imageName = code.uppercased()
+        
+        let frameworkBundle = Bundle(for: CountryKit.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        
+        return resourceBundle?.image(forResource: NSImage.Name(rawValue: imageName))
+    }
+    #endif
     
     /// localized name of the country
     public var localizedName: String {
@@ -40,7 +57,9 @@ public class Country: Codable {
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
         let resourceBundle = Bundle(url: bundleURL!) ?? Bundle.main
         
-        return NSLocalizedString(name, tableName: nil, bundle: resourceBundle, value: "", comment: "country name")
+//        return resourceBundle.localizedString(forKey: name, value: "", table: nil)
+        
+        return NSLocalizedString(name, tableName: "Localizable", bundle: resourceBundle, value: "", comment: "country name")
     }
     
     @objc func getLocalizedName() -> String {

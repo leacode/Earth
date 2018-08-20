@@ -6,10 +6,15 @@
 //  Copyright © 2018 leacode. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 public class CountryKit {
     
+    #if os(iOS)
     public static func flag(countryCode: String) -> UIImage? {
         
         let frameworkBundle = Bundle(for: CountryKit.self)
@@ -19,6 +24,16 @@ public class CountryKit {
 
         return image
     }
+    #elseif os(macOS)
+    public static func flag(countryCode: String) -> NSImage? {
+        
+        let frameworkBundle = Bundle(for: CountryKit.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        
+        return resourceBundle?.image(forResource: NSImage.Name(rawValue: countryCode.uppercased()))
+    }
+    #endif
     
     public static var countries: [Country] = {
         var countries: [Country]? = nil
@@ -38,6 +53,7 @@ public class CountryKit {
         
     }
     
+    #if os(iOS)
     public static var countriesInSections: (sectionTitles: [String], countriesInSections: [[Country]]) {
         
         let countries = self.countries
@@ -75,6 +91,7 @@ public class CountryKit {
         
         return (sectionIndexTitles, sectionsArray)
     }
+    #endif
     
 }
 

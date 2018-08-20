@@ -8,15 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'An easy to use framework to pick names,dial codes,flags and emojis of countries all around the world.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 It offers different kind of pickers for picking infomations about countries etc. You can access vector images of flags. It support 12 kinds of languages.
                        DESC
@@ -29,12 +22,21 @@ It offers different kind of pickers for picking infomations about countries etc.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target  = '10.10'
+  
+  s.source_files       = 'Earth/Classes/*.swift'
+  s.ios.source_files   = 'Earth/Classes/ios/*.swift'
+  # s.osx.source_files   = 'Earth/Classes/osx/*.swift'
 
-  s.source_files = 'Earth/Classes/**/*'
+  s.ios.source_files = 'Earth/Classes/**/*'
+  s.osx.source_files = 'Earth/Classes/**/*'
   
   s.resource_bundles = {
     'Earth' => ['Earth/Assets/*', 'Earth/Assets/*.lproj/*.strings', 'Earth/Assets/*.xcassets',]
   }
+  
+  s.ios.framework  = 'UIKit'
+  s.osx.framework  = 'AppKit'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
