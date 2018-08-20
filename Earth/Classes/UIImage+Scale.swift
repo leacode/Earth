@@ -10,16 +10,14 @@ import Foundation
 
 extension UIImage {
     
-    func resize(width: CGFloat) -> UIImage? {
-        let scale = width / self.size.width
+    func resize(size:CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, true, self.scale)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
         
-        // size has to be integer, otherwise it could get white lines
-        let size = CGSize(width: floor(self.size.width * scale), height: floor(self.size.height * scale))
-        UIGraphicsBeginImageContext(size)
-        draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        let image = UIGraphicsGetImageFromCurrentImageContext()
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return resizedImage
     }
+
     
 }

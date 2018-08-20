@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Earth'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Earth.'
+  s.summary          = 'An easy to use framework to pick names,dial codes,flags and emojis of countries all around the world.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Earth/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'Earth' => ['Earth/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'Earth' => ['Earth/Assets/*', 'Earth/Assets/*.lproj/*.strings', 'Earth/Assets/*.xcassets',]
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

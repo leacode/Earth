@@ -64,7 +64,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     var items = [Any]()
 
     public convenience init(textField: UITextField?,
-                            pickerType: PickerType = PickerType.country_name) {
+                            pickerType: PickerType = PickerType.country_flag_name_dialcode) {
         self.init()
 
         self.pickerType = pickerType

@@ -8,21 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		0444455DA436C8DE8E93A98E7DD92544 /* Pods-Earth_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C7F8DC22BDF1828F0413F3D692B2F29 /* Pods-Earth_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0756E119CEC5877E03C6E8BF6826AC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		0E05CAB21ABF73F24111B1EB2FC3E9DD /* Pods-Earth_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81539B025A217F7E3664CC87DE57ABEA /* Pods-Earth_Example-dummy.m */; };
-		126FA0D62E7EADF201A924AB64E73EA7 /* Earth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1508A48048D4984A6DA43B62375813B5 /* Earth-dummy.m */; };
 		1CA548DF09CAD5F811F135F11B165F60 /* Pods-Earth_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8905096B963212578D7EC927B12F4F59 /* Pods-Earth_Tests-dummy.m */; };
+		1CA8C6B8BB7A04F807959AD832DF2A27 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3BC6B01B71A69F6E05EB70656BE28 /* CountryPickerView.swift */; };
+		213CCE7685E5F862C7C2BEFBA4B6F284 /* Earth.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C73B007861026E98170B75EFD228E642 /* Earth.bundle */; };
+		2EABC3DCD12C32402046CC135AFBE139 /* CountryResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9743541B05D26827A6E31D55900E46 /* CountryResultsTableController.swift */; };
+		37062E4305FE9333F52047DA4827AF4A /* UIImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FE13B335B2DB23946DB9D2394462BF /* UIImage+Scale.swift */; };
+		3F438615746ACE8DFE2AA7E9343B5FCF /* CountryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A3957AFE1DED7CDE25C6A64EC5BB4 /* CountryKit.swift */; };
+		4927969E36EF88169EA83EC344ED71D8 /* Earth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B22C4FC0E2B9BB0FF4AACC86212A6911 /* Earth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51D267A551130B477A7F4E2C2D3214F9 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D588423BB2CD73DBE54F261A5CB1C /* CountryCell.swift */; };
 		61B85AAD975FAB250F1237FD9FCD5765 /* Pods-Earth_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19CF819142AF4FF76E1DEC586BD66E65 /* Pods-Earth_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693DC0EC90B4402C9E702F686EA8108E /* Earth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1559D4A053FF743A447813CD98FFF5 /* Earth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6DDB12D42126630F00CDE9FF /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12CD2126630F00CDE9FF /* Picker.swift */; };
-		6DDB12D52126630F00CDE9FF /* CountryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12CE2126630F00CDE9FF /* CountryKit.swift */; };
-		6DDB12D62126630F00CDE9FF /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12CF2126630F00CDE9FF /* CountryPicker.swift */; };
-		6DDB12D72126630F00CDE9FF /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12D02126630F00CDE9FF /* Country.swift */; };
-		6DDB12D82126630F00CDE9FF /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12D12126630F00CDE9FF /* CountryPickerViewController.swift */; };
-		6DDB12D92126630F00CDE9FF /* UIImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12D22126630F00CDE9FF /* UIImage+Scale.swift */; };
-		6DDB12DA2126630F00CDE9FF /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB12D32126630F00CDE9FF /* CountryPickerView.swift */; };
-		AD2777A5F8CAC6986377BF14ED18AD0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7D482BC766F580CABFF101658E4FF1FE /* BaseCountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8D3537A740141815A5C9EACA1C3C6 /* BaseCountryTableViewController.swift */; };
+		7E74C8E1B198DE36DA2CCD7275DAB5AA /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6886F11D9209124FC73826E18693A041 /* CountryPickerViewController.swift */; };
+		8A02FAAEBAB9978C07A1F3C1754D9330 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAF9005080CA0E1E7F3D13B22C3F0 /* Country.swift */; };
+		9513D6856532AE0E5B063DAB26D2D3F8 /* Earth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE2842165F311B5CAA3723BDEE3145 /* Earth-dummy.m */; };
+		BA5185F0FAEF3FC706F7916A378E3D81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D74C67BE825279B4EF672093C2C00ED /* Localizable.strings */; };
 		C2424B87D93985152A28AAEBF01EA51F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C9B4DEAE2D93C44FF7D60C1F0C199604 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C7AEB7F2937D7C43174D8A753BD051 /* Media.xcassets */; };
+		E0C09D4B63D8BE485E90711426BC8DAB /* CountryJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EF49100858440CC0911D8D693103DE /* CountryJSON.swift */; };
 		E4E51B6CD5A66A1903F236CAF7DD810A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F5F639FBC0EE07186C1D6D7449CE3864 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6179766CFF7716ECD004104C8066A /* Picker.swift */; };
+		FB1D2BACC831CF3B85F96E26CAC14570 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C451934875AB42ECE18EDC878017DF /* CountryPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +37,15 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 841ACBD5F55C39FFF18B8C90388C51BB;
+			remoteGlobalIDString = C5152DAEB154CF5D980D0B32B9B70CF8;
 			remoteInfo = Earth;
+		};
+		A99C8B7FBDD6AD7040562D427048B21E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33A8BA1622C33B23E53D549EDA05CBF1;
+			remoteInfo = "Earth-Earth";
 		};
 		C476E7B1BF3AAD10CB853C96C395F319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -43,55 +57,84 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08AAA5D108C4CE41F4C16E6E5B4E4049 /* Pods_Earth_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earth_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0285651FABC51A08C73301B4F0DE9B95 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09CEAD8FC279289E19E227A58B2E38F6 /* Pods-Earth_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Earth_Example-frameworks.sh"; sourceTree = "<group>"; };
+		09CFEF45CAB1827CB5E2DC1232851AF3 /* Earth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Earth-prefix.pch"; sourceTree = "<group>"; };
 		0ACD89EF76814116F32553E22B86C9C0 /* Pods-Earth_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Earth_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		1508A48048D4984A6DA43B62375813B5 /* Earth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Earth-dummy.m"; sourceTree = "<group>"; };
-		16BFDBAA7ACCD78349171DCDF94319F7 /* Earth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Earth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB6179766CFF7716ECD004104C8066A /* Picker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Earth/Classes/Picker.swift; sourceTree = "<group>"; };
+		0F3CE89395ED65FA264D7FBA4206F5CE /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		10A102E73A42FDDF02A0CFFA3B9FEDB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1235191A5F39EB5FB397ED3AA619DDD0 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		12C451934875AB42ECE18EDC878017DF /* CountryPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPicker.swift; path = Earth/Classes/CountryPicker.swift; sourceTree = "<group>"; };
+		177D345E0B1777BDF2A53BBA68A6A63C /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17C7AEB7F2937D7C43174D8A753BD051 /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Earth/Assets/Media.xcassets; sourceTree = "<group>"; };
 		19CF819142AF4FF76E1DEC586BD66E65 /* Pods-Earth_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Earth_Tests-umbrella.h"; sourceTree = "<group>"; };
+		23868FF71AC17D6807BE2EC4FB3958AC /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A426C23A19CD08C4BD507AC24C072B5 /* ResourceBundle-Earth-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Earth-Info.plist"; sourceTree = "<group>"; };
+		38635254302E63E182CA5DE98E84F419 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3C00CECE5994BC2C9A00D1CF6FF6D733 /* Pods_Earth_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Earth_Tests.framework; path = "Pods-Earth_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF6CE094938064434E8D084483642E9 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		408F94E1DE421C9D2500C34CEEF30C7C /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		40FE13B335B2DB23946DB9D2394462BF /* UIImage+Scale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Scale.swift"; path = "Earth/Classes/UIImage+Scale.swift"; sourceTree = "<group>"; };
 		4490756DDE0CFA61BA6D78EA01593319 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4894FCC6999D7D284B1B2BDBA06A73F8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		491526578E42351159AEFA720FCFFAC2 /* Pods-Earth_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Earth_Example-resources.sh"; sourceTree = "<group>"; };
+		4DB87DB08735B2800CC3FB9668ACA30D /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50B939CEFC63374C3BC2133357D56036 /* Pods-Earth_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Earth_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5F78804E9DEC7FF45EAFDE7605CE55F7 /* Pods-Earth_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Earth_Tests-resources.sh"; sourceTree = "<group>"; };
 		604A2F3D0C03721EAB3AF57D07C4F508 /* Pods-Earth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Earth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		657D7829C705DC2E57E9A1B5A1F52E24 /* Pods_Earth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		609A06906C5355F047A278E708F87493 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		636C2F3C6D57748C8E2BE4ECBF268491 /* Earth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Earth.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6CFD8220A3683613D4FE74A90DDF5D80 /* Earth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Earth-prefix.pch"; sourceTree = "<group>"; };
+		6886F11D9209124FC73826E18693A041 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPickerViewController.swift; path = Earth/Classes/CountryPickerViewController.swift; sourceTree = "<group>"; };
+		6BAD00903B2B7878E3C715A8A024E5A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6C6594B2C111C89D242931FE10BEF76A /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C9743541B05D26827A6E31D55900E46 /* CountryResultsTableController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryResultsTableController.swift; path = Earth/Classes/CountryResultsTableController.swift; sourceTree = "<group>"; };
 		6D75B129747D239B6019040B6DBD9037 /* Pods-Earth_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Earth_Example.modulemap"; sourceTree = "<group>"; };
-		6DDB12CD2126630F00CDE9FF /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Earth/Classes/Picker.swift; sourceTree = "<group>"; };
-		6DDB12CE2126630F00CDE9FF /* CountryKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryKit.swift; path = Earth/Classes/CountryKit.swift; sourceTree = "<group>"; };
-		6DDB12CF2126630F00CDE9FF /* CountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryPicker.swift; path = Earth/Classes/CountryPicker.swift; sourceTree = "<group>"; };
-		6DDB12D02126630F00CDE9FF /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Country.swift; path = Earth/Classes/Country.swift; sourceTree = "<group>"; };
-		6DDB12D12126630F00CDE9FF /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryPickerViewController.swift; path = Earth/Classes/CountryPickerViewController.swift; sourceTree = "<group>"; };
-		6DDB12D22126630F00CDE9FF /* UIImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Scale.swift"; path = "Earth/Classes/UIImage+Scale.swift"; sourceTree = "<group>"; };
-		6DDB12D32126630F00CDE9FF /* CountryPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryPickerView.swift; path = Earth/Classes/CountryPickerView.swift; sourceTree = "<group>"; };
+		6DB8D3537A740141815A5C9EACA1C3C6 /* BaseCountryTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseCountryTableViewController.swift; path = Earth/Classes/BaseCountryTableViewController.swift; sourceTree = "<group>"; };
+		70DB9C2A4E43E49836739A004E17FF96 /* Earth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Earth.modulemap; sourceTree = "<group>"; };
 		738E814EF4DCC6EEE63B37625E4D19EC /* Pods-Earth_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Earth_Tests.modulemap"; sourceTree = "<group>"; };
+		7DCC81543744F1709D8FB1F1483AF66F /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DFAA999A1A6D1508A09FE0ABEDD8B9D /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Earth.xcconfig; sourceTree = "<group>"; };
+		810350E535214A86B7729342C9035B5B /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81539B025A217F7E3664CC87DE57ABEA /* Pods-Earth_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Earth_Example-dummy.m"; sourceTree = "<group>"; };
+		869D588423BB2CD73DBE54F261A5CB1C /* CountryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryCell.swift; path = Earth/Classes/CountryCell.swift; sourceTree = "<group>"; };
 		8905096B963212578D7EC927B12F4F59 /* Pods-Earth_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Earth_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8DC3BC6B01B71A69F6E05EB70656BE28 /* CountryPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPickerView.swift; path = Earth/Classes/CountryPickerView.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A47AC267213FAB10C0D99EE0D973C79 /* Pods-Earth_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Earth_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		9C1559D4A053FF743A447813CD98FFF5 /* Earth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Earth-umbrella.h"; sourceTree = "<group>"; };
-		9C7B29EEDDF1ECF109E5B6A2C6B33AC4 /* Earth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Earth.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9C7F8DC22BDF1828F0413F3D692B2F29 /* Pods-Earth_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Earth_Example-umbrella.h"; sourceTree = "<group>"; };
 		9E5B664B81FA268E3E7C0EBEBFB29D13 /* Pods-Earth_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Earth_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F1FD4FE3382CC9ACA5A2B85E46ECD84 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4EF49100858440CC0911D8D693103DE /* CountryJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryJSON.swift; path = Earth/Classes/CountryJSON.swift; sourceTree = "<group>"; };
+		A79A3957AFE1DED7CDE25C6A64EC5BB4 /* CountryKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryKit.swift; path = Earth/Classes/CountryKit.swift; sourceTree = "<group>"; };
 		B181C6ABC90E3248C42A40CA824C22A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5BC1AD5BA8F30118A710A2939487B7D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B22C4FC0E2B9BB0FF4AACC86212A6911 /* Earth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Earth-umbrella.h"; sourceTree = "<group>"; };
+		B9AE27A5907404C1301099AF8AE17E38 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BBFE2842165F311B5CAA3723BDEE3145 /* Earth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Earth-dummy.m"; sourceTree = "<group>"; };
+		C2E85DDE09FAB752C98B1E47FA1C24FC /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C6EA4D16B97B6557CEC771B48B22D76E /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C73B007861026E98170B75EFD228E642 /* Earth.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Earth.bundle; path = "Earth-Earth.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84208E1C8F36F4AE4435D45764AB5A2 /* Pods-Earth_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Earth_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D28E538EFAA43855C6C3F2AD50D5E5EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CA622B97D69D50F51643BBC0398E1D13 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF3C5414F26342715BDCE98EC9BAF844 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D1140D53D24B0B54027541725B543341 /* Pods_Earth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Earth_Example.framework; path = "Pods-Earth_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D512A1A899658045D19ABF6D6D208BF8 /* Pods-Earth_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Earth_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DC2948908E0D862AAD35F7631ABB5522 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC326CC7A53A6F9681F306A274BD505B /* Earth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Earth.xcconfig; sourceTree = "<group>"; };
-		F3D3B98E48A535C148279FEF90DFB42F /* Earth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Earth.modulemap; sourceTree = "<group>"; };
+		DCCDD8F06DC1A49E327C1FF970B2D180 /* Earth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Earth.framework; path = Earth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B94E7032617E6CF6BA05F6579BFE07 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E6A067903EE936BBF69FFCB6EBE1DAFC /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F04AAF9005080CA0E1E7F3D13B22C3F0 /* Country.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Country.swift; path = Earth/Classes/Country.swift; sourceTree = "<group>"; };
 		F607CE04C51752028A93D5A787136CBC /* Pods-Earth_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Earth_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F75F0C789ED6017B39E7FF9AFA8FBFA7 /* Pods-Earth_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Earth_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E07BCDB50E45ABF386C78D959A222CB /* Frameworks */ = {
+		6B6AE714A409DF7AFC640CEA4FDDE564 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2777A5F8CAC6986377BF14ED18AD0A /* Foundation.framework in Frameworks */,
+				0756E119CEC5877E03C6E8BF6826AC9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,9 +154,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED411C913D196B68716CE3AA9102BBDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062BE395D0352B15336B7283D0ED6E87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C73B007861026E98170B75EFD228E642 /* Earth.bundle */,
+				DCCDD8F06DC1A49E327C1FF970B2D180 /* Earth.framework */,
+				D1140D53D24B0B54027541725B543341 /* Pods_Earth_Example.framework */,
+				3C00CECE5994BC2C9A00D1CF6FF6D733 /* Pods_Earth_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F85DCF53E1793208D1E652E2D0A6FD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D74C67BE825279B4EF672093C2C00ED /* Localizable.strings */,
+				17C7AEB7F2937D7C43174D8A753BD051 /* Media.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1339604BE8B9D4F736007CEA1ADBD31A /* Pods-Earth_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,74 +229,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4668BB324AB0BDD260B2A2D9CF6B646E /* Development Pods */ = {
+		71515744914994837862353A14656A83 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6C1AEE3AD6379BCC9EBDC206A81DB5FC /* Earth */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		5B6CCD44368704C37FAAE6CC4DD6B4FC /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				9C7B29EEDDF1ECF109E5B6A2C6B33AC4 /* Earth.podspec */,
-				D28E538EFAA43855C6C3F2AD50D5E5EE /* LICENSE */,
-				B5BC1AD5BA8F30118A710A2939487B7D /* README.md */,
+				636C2F3C6D57748C8E2BE4ECBF268491 /* Earth.podspec */,
+				CF3C5414F26342715BDCE98EC9BAF844 /* LICENSE */,
+				6BAD00903B2B7878E3C715A8A024E5A0 /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		6C1AEE3AD6379BCC9EBDC206A81DB5FC /* Earth */ = {
-			isa = PBXGroup;
-			children = (
-				6DDB12D02126630F00CDE9FF /* Country.swift */,
-				6DDB12CE2126630F00CDE9FF /* CountryKit.swift */,
-				6DDB12CF2126630F00CDE9FF /* CountryPicker.swift */,
-				6DDB12D32126630F00CDE9FF /* CountryPickerView.swift */,
-				6DDB12D12126630F00CDE9FF /* CountryPickerViewController.swift */,
-				6DDB12CD2126630F00CDE9FF /* Picker.swift */,
-				6DDB12D22126630F00CDE9FF /* UIImage+Scale.swift */,
-				5B6CCD44368704C37FAAE6CC4DD6B4FC /* Pod */,
-				72C930DB562FD8E514B3708F21864327 /* Support Files */,
-			);
-			name = Earth;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		72C930DB562FD8E514B3708F21864327 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F3D3B98E48A535C148279FEF90DFB42F /* Earth.modulemap */,
-				DC326CC7A53A6F9681F306A274BD505B /* Earth.xcconfig */,
-				1508A48048D4984A6DA43B62375813B5 /* Earth-dummy.m */,
-				6CFD8220A3683613D4FE74A90DDF5D80 /* Earth-prefix.pch */,
-				9C1559D4A053FF743A447813CD98FFF5 /* Earth-umbrella.h */,
-				DC2948908E0D862AAD35F7631ABB5522 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Earth";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				4668BB324AB0BDD260B2A2D9CF6B646E /* Development Pods */,
+				89EDB5000EBFC693F3D2DF754FB8E52F /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				A32A673CE426061B576D56F540A4489B /* Products */,
+				062BE395D0352B15336B7283D0ED6E87 /* Products */,
 				433F9C32054E7C03B834CF29392001A2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A32A673CE426061B576D56F540A4489B /* Products */ = {
+		89EDB5000EBFC693F3D2DF754FB8E52F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				16BFDBAA7ACCD78349171DCDF94319F7 /* Earth.framework */,
-				657D7829C705DC2E57E9A1B5A1F52E24 /* Pods_Earth_Example.framework */,
-				08AAA5D108C4CE41F4C16E6E5B4E4049 /* Pods_Earth_Tests.framework */,
+				E0AB693AAEF355FECCE6F25F1A6D0D0D /* Earth */,
 			);
-			name = Products;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -245,6 +274,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		E0AB693AAEF355FECCE6F25F1A6D0D0D /* Earth */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8D3537A740141815A5C9EACA1C3C6 /* BaseCountryTableViewController.swift */,
+				F04AAF9005080CA0E1E7F3D13B22C3F0 /* Country.swift */,
+				869D588423BB2CD73DBE54F261A5CB1C /* CountryCell.swift */,
+				A4EF49100858440CC0911D8D693103DE /* CountryJSON.swift */,
+				A79A3957AFE1DED7CDE25C6A64EC5BB4 /* CountryKit.swift */,
+				12C451934875AB42ECE18EDC878017DF /* CountryPicker.swift */,
+				8DC3BC6B01B71A69F6E05EB70656BE28 /* CountryPickerView.swift */,
+				6886F11D9209124FC73826E18693A041 /* CountryPickerViewController.swift */,
+				6C9743541B05D26827A6E31D55900E46 /* CountryResultsTableController.swift */,
+				0DB6179766CFF7716ECD004104C8066A /* Picker.swift */,
+				40FE13B335B2DB23946DB9D2394462BF /* UIImage+Scale.swift */,
+				71515744914994837862353A14656A83 /* Pod */,
+				0F85DCF53E1793208D1E652E2D0A6FD3 /* Resources */,
+				F2C8B1C7AD4BAFE9C1455DE59820BD2E /* Support Files */,
+			);
+			name = Earth;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		F2C8B1C7AD4BAFE9C1455DE59820BD2E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				70DB9C2A4E43E49836739A004E17FF96 /* Earth.modulemap */,
+				7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */,
+				BBFE2842165F311B5CAA3723BDEE3145 /* Earth-dummy.m */,
+				09CFEF45CAB1827CB5E2DC1232851AF3 /* Earth-prefix.pch */,
+				B22C4FC0E2B9BB0FF4AACC86212A6911 /* Earth-umbrella.h */,
+				10A102E73A42FDDF02A0CFFA3B9FEDB9 /* Info.plist */,
+				2A426C23A19CD08C4BD507AC24C072B5 /* ResourceBundle-Earth-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Earth";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -256,19 +322,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7E6D2685483A3B250D6E3814A7C3C5D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4927969E36EF88169EA83EC344ED71D8 /* Earth-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9549D2D80D7173AB763CF6FA765C8756 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0444455DA436C8DE8E93A98E7DD92544 /* Pods-Earth_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D45B9D9082761E598E8F5AD6BFB55014 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				693DC0EC90B4402C9E702F686EA8108E /* Earth-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,25 +356,25 @@
 			);
 			name = "Pods-Earth_Example";
 			productName = "Pods-Earth_Example";
-			productReference = 657D7829C705DC2E57E9A1B5A1F52E24 /* Pods_Earth_Example.framework */;
+			productReference = D1140D53D24B0B54027541725B543341 /* Pods_Earth_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		841ACBD5F55C39FFF18B8C90388C51BB /* Earth */ = {
+		33A8BA1622C33B23E53D549EDA05CBF1 /* Earth-Earth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A051B8253A562E2B97A175B18834F0F /* Build configuration list for PBXNativeTarget "Earth" */;
+			buildConfigurationList = 34E6726668A566B72D435A5023FF4EBA /* Build configuration list for PBXNativeTarget "Earth-Earth" */;
 			buildPhases = (
-				7A6E3B3BE1CA17EEC2B314FD8F4143C1 /* Sources */,
-				5E07BCDB50E45ABF386C78D959A222CB /* Frameworks */,
-				D45B9D9082761E598E8F5AD6BFB55014 /* Headers */,
+				EA26841451A69056C4052BB20B81960E /* Sources */,
+				ED411C913D196B68716CE3AA9102BBDE /* Frameworks */,
+				9209DF192AA29FBBD98E128C2DB9F46B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Earth;
-			productName = Earth;
-			productReference = 16BFDBAA7ACCD78349171DCDF94319F7 /* Earth.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "Earth-Earth";
+			productName = "Earth-Earth";
+			productReference = C73B007861026E98170B75EFD228E642 /* Earth.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		C2217A91FAD1EB33A992220982418F3E /* Pods-Earth_Tests */ = {
 			isa = PBXNativeTarget;
@@ -325,7 +391,26 @@
 			);
 			name = "Pods-Earth_Tests";
 			productName = "Pods-Earth_Tests";
-			productReference = 08AAA5D108C4CE41F4C16E6E5B4E4049 /* Pods_Earth_Tests.framework */;
+			productReference = 3C00CECE5994BC2C9A00D1CF6FF6D733 /* Pods_Earth_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5152DAEB154CF5D980D0B32B9B70CF8 /* Earth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 002E641E86276088D2FF1FB63357CD5D /* Build configuration list for PBXNativeTarget "Earth" */;
+			buildPhases = (
+				CAA4EFD6454E82515A8244B1E3736720 /* Sources */,
+				6B6AE714A409DF7AFC640CEA4FDDE564 /* Frameworks */,
+				B807DF00C9DD6F90B97609A88AE68DFC /* Resources */,
+				7E6D2685483A3B250D6E3814A7C3C5D1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02B60C69F50B5E47144146DE8D4C1C5F /* PBXTargetDependency */,
+			);
+			name = Earth;
+			productName = Earth;
+			productReference = DCCDD8F06DC1A49E327C1FF970B2D180 /* Earth.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -336,11 +421,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					841ACBD5F55C39FFF18B8C90388C51BB = {
-						LastSwiftMigration = 1000;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -350,38 +430,70 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A32A673CE426061B576D56F540A4489B /* Products */;
+			productRefGroup = 062BE395D0352B15336B7283D0ED6E87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				841ACBD5F55C39FFF18B8C90388C51BB /* Earth */,
+				C5152DAEB154CF5D980D0B32B9B70CF8 /* Earth */,
+				33A8BA1622C33B23E53D549EDA05CBF1 /* Earth-Earth */,
 				1C8932812DDA45DD8B326FA55971302B /* Pods-Earth_Example */,
 				C2217A91FAD1EB33A992220982418F3E /* Pods-Earth_Tests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		7A6E3B3BE1CA17EEC2B314FD8F4143C1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		9209DF192AA29FBBD98E128C2DB9F46B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DDB12D62126630F00CDE9FF /* CountryPicker.swift in Sources */,
-				126FA0D62E7EADF201A924AB64E73EA7 /* Earth-dummy.m in Sources */,
-				6DDB12D42126630F00CDE9FF /* Picker.swift in Sources */,
-				6DDB12D72126630F00CDE9FF /* Country.swift in Sources */,
-				6DDB12D92126630F00CDE9FF /* UIImage+Scale.swift in Sources */,
-				6DDB12D52126630F00CDE9FF /* CountryKit.swift in Sources */,
-				6DDB12D82126630F00CDE9FF /* CountryPickerViewController.swift in Sources */,
-				6DDB12DA2126630F00CDE9FF /* CountryPickerView.swift in Sources */,
+				BA5185F0FAEF3FC706F7916A378E3D81 /* Localizable.strings in Resources */,
+				C9B4DEAE2D93C44FF7D60C1F0C199604 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B807DF00C9DD6F90B97609A88AE68DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213CCE7685E5F862C7C2BEFBA4B6F284 /* Earth.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		8E4331EF82C2F14A6A8F0AE4CA789A49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1CA548DF09CAD5F811F135F11B165F60 /* Pods-Earth_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAA4EFD6454E82515A8244B1E3736720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D482BC766F580CABFF101658E4FF1FE /* BaseCountryTableViewController.swift in Sources */,
+				8A02FAAEBAB9978C07A1F3C1754D9330 /* Country.swift in Sources */,
+				51D267A551130B477A7F4E2C2D3214F9 /* CountryCell.swift in Sources */,
+				E0C09D4B63D8BE485E90711426BC8DAB /* CountryJSON.swift in Sources */,
+				3F438615746ACE8DFE2AA7E9343B5FCF /* CountryKit.swift in Sources */,
+				FB1D2BACC831CF3B85F96E26CAC14570 /* CountryPicker.swift in Sources */,
+				1CA8C6B8BB7A04F807959AD832DF2A27 /* CountryPickerView.swift in Sources */,
+				7E74C8E1B198DE36DA2CCD7275DAB5AA /* CountryPickerViewController.swift in Sources */,
+				2EABC3DCD12C32402046CC135AFBE139 /* CountryResultsTableController.swift in Sources */,
+				9513D6856532AE0E5B063DAB26D2D3F8 /* Earth-dummy.m in Sources */,
+				F5F639FBC0EE07186C1D6D7449CE3864 /* Picker.swift in Sources */,
+				37062E4305FE9333F52047DA4827AF4A /* UIImage+Scale.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA26841451A69056C4052BB20B81960E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +508,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		02B60C69F50B5E47144146DE8D4C1C5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Earth-Earth";
+			target = 33A8BA1622C33B23E53D549EDA05CBF1 /* Earth-Earth */;
+			targetProxy = A99C8B7FBDD6AD7040562D427048B21E /* PBXContainerItemProxy */;
+		};
 		1B27638148926FD94CD5AA33E71D24F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Earth_Example";
@@ -405,12 +523,61 @@
 		4C932A3A94E2AAAA6C33DA52A4AD0891 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Earth;
-			target = 841ACBD5F55C39FFF18B8C90388C51BB /* Earth */;
+			target = C5152DAEB154CF5D980D0B32B9B70CF8 /* Earth */;
 			targetProxy = 65D2AC9B3A014A0C947368924DBEBA52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0D74C67BE825279B4EF672093C2C00ED /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC81543744F1709D8FB1F1483AF66F /* Localizable.strings */,
+				609A06906C5355F047A278E708F87493 /* Localizable.strings */,
+				23868FF71AC17D6807BE2EC4FB3958AC /* Localizable.strings */,
+				4DB87DB08735B2800CC3FB9668ACA30D /* Localizable.strings */,
+				4894FCC6999D7D284B1B2BDBA06A73F8 /* Localizable.strings */,
+				B9AE27A5907404C1301099AF8AE17E38 /* Localizable.strings */,
+				9F1FD4FE3382CC9ACA5A2B85E46ECD84 /* Localizable.strings */,
+				C2E85DDE09FAB752C98B1E47FA1C24FC /* Localizable.strings */,
+				810350E535214A86B7729342C9035B5B /* Localizable.strings */,
+				38635254302E63E182CA5DE98E84F419 /* Localizable.strings */,
+				7DFAA999A1A6D1508A09FE0ABEDD8B9D /* Localizable.strings */,
+				177D345E0B1777BDF2A53BBA68A6A63C /* Localizable.strings */,
+				0285651FABC51A08C73301B4F0DE9B95 /* Localizable.strings */,
+				3CF6CE094938064434E8D084483642E9 /* Localizable.strings */,
+				408F94E1DE421C9D2500C34CEEF30C7C /* Localizable.strings */,
+				6C6594B2C111C89D242931FE10BEF76A /* Localizable.strings */,
+				1235191A5F39EB5FB397ED3AA619DDD0 /* Localizable.strings */,
+				0F3CE89395ED65FA264D7FBA4206F5CE /* Localizable.strings */,
+				CA622B97D69D50F51643BBC0398E1D13 /* Localizable.strings */,
+				E0B94E7032617E6CF6BA05F6579BFE07 /* Localizable.strings */,
+				C6EA4D16B97B6557CEC771B48B22D76E /* Localizable.strings */,
+				E6A067903EE936BBF69FFCB6EBE1DAFC /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			path = Earth/Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		066256D3D21F5490CDABD962C40CDD8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Earth";
+				INFOPLIST_FILE = "Target Support Files/Earth/ResourceBundle-Earth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Earth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		0A862A23652D14F10C9A80EBDCA44D90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C84208E1C8F36F4AE4435D45764AB5A2 /* Pods-Earth_Tests.release.xcconfig */;
@@ -444,6 +611,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		4196B0079A50E1A3F2FAE3D3F25AAD4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Earth/Earth-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Earth/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Earth/Earth.modulemap";
+				PRODUCT_MODULE_NAME = Earth;
+				PRODUCT_NAME = Earth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -505,6 +704,55 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		95B2856C3D920BDD40EDE00CEBF84687 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Earth/Earth-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Earth/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Earth/Earth.modulemap";
+				PRODUCT_MODULE_NAME = Earth;
+				PRODUCT_NAME = Earth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A33BA9C8ECAB9E2888CAFDE87C450416 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB35142C60EE45E138AA0E091DB552D /* Earth.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Earth";
+				INFOPLIST_FILE = "Target Support Files/Earth/ResourceBundle-Earth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Earth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -601,73 +849,6 @@
 			};
 			name = Debug;
 		};
-		C20BFF76A9E2661AEFB4C6EE57CB7CEB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC326CC7A53A6F9681F306A274BD505B /* Earth.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Earth/Earth-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Earth/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Earth/Earth.modulemap";
-				PRODUCT_MODULE_NAME = Earth;
-				PRODUCT_NAME = Earth;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C8F042ACEB4B334B67C818C6A1BD0952 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC326CC7A53A6F9681F306A274BD505B /* Earth.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Earth/Earth-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Earth/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Earth/Earth.modulemap";
-				PRODUCT_MODULE_NAME = Earth;
-				PRODUCT_NAME = Earth;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		E7F324688EC7563EBD5EFC0CD4F3BE1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F607CE04C51752028A93D5A787136CBC /* Pods-Earth_Example.release.xcconfig */;
@@ -739,6 +920,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		002E641E86276088D2FF1FB63357CD5D /* Build configuration list for PBXNativeTarget "Earth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4196B0079A50E1A3F2FAE3D3F25AAD4C /* Debug */,
+				95B2856C3D920BDD40EDE00CEBF84687 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0ED8056C654D16A437471F638EE57165 /* Build configuration list for PBXNativeTarget "Pods-Earth_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -748,20 +938,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A051B8253A562E2B97A175B18834F0F /* Build configuration list for PBXNativeTarget "Earth" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C8F042ACEB4B334B67C818C6A1BD0952 /* Debug */,
-				C20BFF76A9E2661AEFB4C6EE57CB7CEB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
 				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E6726668A566B72D435A5023FF4EBA /* Build configuration list for PBXNativeTarget "Earth-Earth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A33BA9C8ECAB9E2888CAFDE87C450416 /* Debug */,
+				066256D3D21F5490CDABD962C40CDD8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

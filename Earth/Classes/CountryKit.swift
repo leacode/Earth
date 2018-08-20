@@ -11,24 +11,22 @@ import UIKit
 public class CountryKit {
     
     public static func flag(countryCode: String) -> UIImage? {
-        let bundle: Bundle = Bundle(for: CountryKit.self)
         
-        let image = UIImage(named: countryCode, in: bundle, compatibleWith: nil)
-        
+        let frameworkBundle = Bundle(for: CountryKit.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        let image = UIImage(named: countryCode, in: resourceBundle, compatibleWith: nil)
+
         return image
     }
     
     public static var countries: [Country] = {
         var countries: [Country]? = nil
-        let bundle = Bundle(for: CountryKit.self)
         
-        guard let jsonPath = bundle.path(forResource: "CountryCodes", ofType: "json"),
-        let countryData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath))   else {
-            return []
+        if let countryData = countryJSON.data(using: .utf8) {
+            countries = try? JSONDecoder().decode([Country].self, from: countryData)
         }
-        
-        countries = try? JSONDecoder().decode([Country].self, from: countryData)
-        
+
         return countries ?? []
     }()
     

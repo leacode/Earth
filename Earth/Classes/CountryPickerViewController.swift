@@ -19,7 +19,22 @@ public enum PickerMode {
     
 }
 
+public protocol CountryPickerViewControllerDelegate: class {
+    
+    func countryPickerController(_ countryPickerController: CountryPickerViewController, didSelectCountry country: Country)
+    
+}
+
+/// wrapped CountriesViewController in a UINavigationController
 public class CountryPickerViewController: UINavigationController {
+    
+    public weak var pickerDelegate: CountryPickerViewControllerDelegate? {
+        didSet {
+            if let controller = self.viewControllers.first as? CountriesViewController {
+                controller.pickerDelegate = pickerDelegate
+            }
+        }
+    }
     
     var countriesViewController: CountriesViewController!
     
@@ -27,36 +42,34 @@ public class CountryPickerViewController: UINavigationController {
         super.viewDidLoad()
         
         countriesViewController = CountriesViewController()
+        countriesViewController.pickerDelegate = pickerDelegate
         
         self.viewControllers = [countriesViewController]
     }
 
 }
 
-public class CountriesViewController: UIViewController {
+class CountriesViewController: BaseCountryTableViewController {
     
-    let cellId = "countryCell"
-    
-    var tableView: UITableView!
-    
+    weak var pickerDelegate: CountryPickerViewControllerDelegate?
+
     lazy var countriesInSections = CountryKit.countriesInSections
     lazy var countries: [Country] = CountryKit.countries
-    var filteredCountries: [Country] = []
     
     private var pickerMode: PickerMode = .default
     
-    public var searchController: UISearchController!
+    var searchController: UISearchController!
     
-    var shouldShowSearchResults: Bool = false
+    var resultsController: CountryResultsTableController!
+    
+    var selectedSearchedCountry: Country! = nil
 
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        configureTableView()
         configureSearchController()
         
         let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancel))
-        
         self.navigationItem.leftBarButtonItem = leftItem
         
         self.title = "Select a country"
@@ -68,164 +81,148 @@ public class CountriesViewController: UIViewController {
         
     }
     
-    func configureTableView() {
-        
-        tableView = UITableView()
-        
-        self.view.addSubview(tableView)
-        
-        
-        let constraints = [NSLayoutConstraint(item: tableView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0.0),
-                           NSLayoutConstraint(item: tableView, attribute: .top,     relatedBy: .equal, toItem: self.view, attribute: .top,     multiplier: 1.0, constant: 0.0),
-                           NSLayoutConstraint(item: tableView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-                           NSLayoutConstraint(item: tableView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0)]
-        
-        self.view.addConstraints(constraints)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate(constraints)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(CountryCell.self, forCellReuseIdentifier: cellId)
-    }
-    
     func configureSearchController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.delegate = self
+        
+        resultsController = CountryResultsTableController()
+        resultsController.tableView.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = true
-        searchController.searchBar.barStyle = .default
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.placeholder = "Search here..."
-        searchController.searchBar.delegate = self
         
         if #available(iOS 11.0, *) {
-            self.navigationItem.searchController = searchController
+            // For iOS 11 and later, we place the search bar in the navigation bar.
+            navigationController?.navigationBar.prefersLargeTitles = true
+            
+            navigationItem.searchController = searchController
+            
+            // We want the search bar visible all the time.
+            navigationItem.hidesSearchBarWhenScrolling = false
         } else {
+            // For iOS 10 and earlier, we place the search bar in the table view's header.
             tableView.tableHeaderView = searchController.searchBar
         }
         
+        searchController.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        
+        definesPresentationContext = true
     }
-    
 
 }
 
-extension CountriesViewController: UITableViewDataSource {
+extension CountriesViewController {
     
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        
-        if shouldShowSearchResults {
-            return filteredCountries.count
-        } else {
-            return countriesInSections.sectionTitles.count
-        }
-        
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return countriesInSections.sectionTitles.count
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if shouldShowSearchResults {
-            return filteredCountries.count
-        } else {
-            return countriesInSections.countriesInSections[section].count
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return countriesInSections.countriesInSections[section].count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CountryCell
         
-        let country = shouldShowSearchResults ? filteredCountries[indexPath.row] : countriesInSections.countriesInSections[indexPath.section][indexPath.row]
-        
-        cell.imageView?.image = country.flag?.resize(width: 28.0)
-        cell.textLabel?.text = country.localizedName
-        
-        cell.detailTextLabel?.text = country.dialCode
+        let country = countriesInSections.countriesInSections[indexPath.section][indexPath.row]
+        configureCell(cell, forCountry: country)
         
         return cell
     }
     
-    public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return shouldShowSearchResults ? nil : countriesInSections.sectionTitles
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return countriesInSections.sectionTitles
     }
     
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return shouldShowSearchResults ? nil : countriesInSections.sectionTitles[section]
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return countriesInSections.sectionTitles[section]
     }
     
-    public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
     
 }
 
-extension CountriesViewController: UITableViewDelegate {
+extension CountriesViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedCountry: Country
+        
+        if tableView == self.tableView {
+            selectedCountry = countriesInSections.countriesInSections[indexPath.section][indexPath.row]
+        } else {
+            selectedCountry = resultsController.filteredCountries[indexPath.row]
+        }
+        
+        if let pickerViewController = self.navigationController as? CountryPickerViewController {
+            pickerDelegate?.countryPickerController(pickerViewController, didSelectCountry: selectedCountry)
+        }
+        
+    }
     
 }
-
 
 extension CountriesViewController: UISearchBarDelegate {
     
-    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        shouldShowSearchResults = true
-        tableView.reloadData()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
-            shouldShowSearchResults = false
-            tableView.reloadData()
-        }
-    }
-    
-    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        shouldShowSearchResults = false
-        tableView.reloadData()
-    }
-    
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if !shouldShowSearchResults {
-            shouldShowSearchResults = true
-            tableView.reloadData()
-        }
-        searchController.searchBar.resignFirstResponder()
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        updateSearchResults(for: searchController)
     }
     
 }
 
-extension CountriesViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+extension CountriesViewController: UISearchResultsUpdating {
     
-    public func willDismissSearchController(_ searchController: UISearchController) {
-        shouldShowSearchResults = false
-        tableView.reloadData()
-    }
-    
-    public func updateSearchResults(for searchController: UISearchController) {
-        guard let searchString = searchController.searchBar.text?.lowercased() else { return }
+    func updateSearchResults(for searchController: UISearchController) {
         
-        filteredCountries = countries.filter({ (country: Country) -> Bool in
-            return country.name.lowercased().contains(searchString)
+        let whitespaceCharacterSet = CharacterSet.whitespaces
+        let searchText = searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet).lowercased()
+        
+        let filteredResults = countries.filter({ (country: Country) -> Bool in
+            let countryLocalizedName = country.stringForSearch
+            return countryLocalizedName.contains(searchText)
         })
         
-        tableView.reloadData()
+        // Hand over the filtered results to our search results table.
+        if let resultsController = searchController.searchResultsController as? CountryResultsTableController {
+            resultsController.filteredCountries = filteredResults
+            resultsController.tableView.reloadData()
+        }
     }
     
 }
 
-class CountryCell: UITableViewCell {
+// MARK: - UISearchControllerDelegate
+
+extension CountriesViewController: UISearchControllerDelegate {
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: reuseIdentifier)
-        
-        self.textLabel?.adjustsFontSizeToFitWidth = true
-        self.textLabel?.minimumScaleFactor = 0.5
+    func presentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
- 
+    func willPresentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
     }
     
 }
+

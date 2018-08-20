@@ -7,18 +7,51 @@
 //
 
 import UIKit
+import Earth
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var countryTF: CountryPicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        countryTF.pickerDelegate = self
+        
+        if let country = CountryKit.country(countryCode: "CN") {
+            flagImageView.image = country.flag
+            countryTF.text = country.localizedName
+        }
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func selectCountry(_ sender: Any) {
+        
+        let countryPicker = CountryPickerViewController()
+        countryPicker.pickerDelegate = self
+        present(countryPicker, animated: true, completion: nil)
+        
     }
 
+}
+
+extension ViewController: PickerDelegate {
+    
+    func didPickCountry(_ picker: Picker, didSelectCountry country: Country) {
+        flagImageView.image = country.flag
+        countryTF.text = country.localizedName
+    }
+    
+}
+
+extension ViewController: CountryPickerViewControllerDelegate {
+    
+    func countryPickerController(_ countryPickerController: CountryPickerViewController, didSelectCountry country: Country) {
+        countryPickerController.dismiss(animated: true, completion: nil)
+        flagImageView.image = country.flag
+        countryTF.text = country.localizedName
+    }
+    
 }
 

@@ -18,5 +18,12 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Earth/Classes/**/*"
+  "source_files": "Earth/Classes/**/*",
+  "resource_bundles": {
+    "Earth": [
+      "Earth/Assets/*",
+      "Earth/Assets/*.lproj/*.strings",
+      "Earth/Assets/*.xcassets"
+    ]
+  }
 }

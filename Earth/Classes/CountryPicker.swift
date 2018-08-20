@@ -12,10 +12,21 @@ import UIKit
     
     var picker: Picker!
     
-    public convenience init(data: [Any]) {
-        self.init()
+    public weak var pickerDelegate: PickerDelegate? {
+        didSet {
+            picker?.delegate = pickerDelegate
+        }
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
         picker = Picker(textField: self)
     }
-
+    
 }

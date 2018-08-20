@@ -39,7 +39,6 @@ public class CountryPickerView: UIPickerView {
     
     let countries: [Country] = CountryKit.countries
     
-    
 }
 
 extension CountryPickerView: UIPickerViewDataSource {
