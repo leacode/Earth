@@ -30,7 +30,7 @@
 		6D714500212ABE62000AE12D /* Earth_Macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Earth_Macos.entitlements; sourceTree = "<group>"; };
 		6D8732A1212AC92C00AAF925 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
 		6D8732A2212AC92D00AAF925 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		6D8732A3212AC92D00AAF925 /* Earth.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Earth.podspec; path = ../../Earth.podspec; sourceTree = "<group>"; };
+		6D8732A3212AC92D00AAF925 /* Earth.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Earth.podspec; path = ../../Earth.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,15 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Earth_Macos/Pods-Earth_Macos-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Earth/Earth.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Earth.framework",
 			);
@@ -202,15 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Earth_Macos-checkManifestLockResult.txt",
 			);
