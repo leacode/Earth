@@ -7,11 +7,7 @@
 //  The infos of countries as JSON format
 //
 
-#if os(iOS)
-import UIKit
-#elseif os(macOS)
-import AppKit
-#endif
+import Foundation
 
 let countryJSON = """
 [

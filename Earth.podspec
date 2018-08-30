@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '0.1.1'
-  s.summary          = 'An easy to use framework to pick names,dial codes,flags and emojis of countries all around the world.'
+  s.version          = '0.1.2'
+  s.summary          = 'A custmizable and easy to use framework contains Country Picker and awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
 It offers different kind of pickers for picking infomations about countries etc. You can access vector images of flags. It support 12 kinds of languages.
                        DESC

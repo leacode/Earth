@@ -10,7 +10,7 @@ import UIKit
 class CountryCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .subtitle,reuseIdentifier: reuseIdentifier)
         
         self.textLabel?.adjustsFontSizeToFitWidth = true
         self.textLabel?.minimumScaleFactor = 0.5

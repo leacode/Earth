@@ -17,11 +17,12 @@ An easy to use framework to pick names,dial codes,flags and emojis of countries 
 
 - Support 242 countries with flags, emojis and dial codes
 - Support 12 Languages. If it doesn't cover your language, PR is welcomed.
-- Now it has two type of pickes. Picker like picker and tableView like picker.
+- CountryTextField class for picking country from a picker view
+- CountryPickerView allows you to select a country from a UITableView
 
 ## How to use
 
-get countries' infomation (Support both Mac OS and iOS)
+- Getting countries' infomation (Support both Mac OS and iOS)
 
 ```
 import Earth
@@ -31,6 +32,7 @@ let countries = CountryKit.countries
 
 // get a country with country code
 if let country = CountryKit.country(countryCode: "CN") {
+
      // use result here
      
      // get country's flag
@@ -42,7 +44,7 @@ if let country = CountryKit.country(countryCode: "CN") {
 
 ```
 
-show country picker (only support iOS for now)
+- Showing country picker (only support iOS for now)
 
 ```
 let countryPicker = CountryPickerViewController()
@@ -50,8 +52,71 @@ countryPicker.pickerDelegate = self
 present(countryPicker, animated: true, completion: nil)
 ```
 
+- Custmizing CountryTextField (only support iOS for now)
+
+```
+...
+
+var settings = Picker.Settings()
+// style
+settings.barStyle = UIBarStyle.default  // Set toobar style
+settings.displayCancelButton = true     // show cancel button or not
+
+// font
+settings.cellFont = UIFont.systemFont(ofSize: 15.0) // set font color
+
+// text
+settings.placeholder = "choose a country"  // set a placeholder for the text view
+settings.doneButtonText = "Done"           // set done button text
+settings.cancelButtonText = "Cancel"       // set cancel button text
+
+// colors
+settings.toolbarColor = UIColor.blue                    // set toolbar color
+settings.pickerViewBackgroundColor = UIColor.lightGray  // set background color of pickerView
+settings.doneButtonColor = .white                       // set text color of done button
+settings.cancelButtonColor = .purple                    // set text color of cancel button
+
+// height
+settings.rowHeight = 44.0                               // set row height
+
+countryTF.settings = settings
+```
+
 Or you can just specify a textView as 'CountryPicker' and set it's delegate 'pickerDelegate' to handle the result.
 
+
+- Custmizing CountryPickerViewController
+
+
+```
+let countryPicker = CountryPickerViewController()
+countryPicker.pickerDelegate = self
+        
+var settings = CountryPickerViewController.Settings()
+
+// style
+settings.prefersLargeTitles = false
+settings.hidesSearchBarWhenScrolling = false
+
+// colors
+settings.barTintColor = .orange
+settings.cancelButtonColor = .white
+settings.searchBarTintColor = .black
+
+// texts
+settings.searchBarPlaceholder = "搜索"
+settings.title = "请选择国家"
+
+// config
+settings.showDialCode = true
+settings.showFlags = true
+settings.showEmojis = true
+
+countryPicker.settings = settings
+                
+present(countryPicker, animated: true, completion: nil)
+
+```
 
 ## Example
 

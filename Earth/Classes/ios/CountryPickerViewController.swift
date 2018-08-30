@@ -9,16 +9,6 @@
 #if os(iOS)
 import UIKit
 
-public enum PickerMode {
-    
-    case `default`
-    
-    case country_name
-    case country_flag
-    case country_flag_name
-    case country_flag_name_dialcode
-    
-}
 
 public protocol CountryPickerViewControllerDelegate: class {
     
@@ -26,8 +16,41 @@ public protocol CountryPickerViewControllerDelegate: class {
     
 }
 
+public protocol CountryPickerViewControllerDelegateLayout: class {
+    
+    func countryPickerController(_ countryPickerController: CountryPickerViewController)
+    
+}
+
 /// wrapped CountriesViewController in a UINavigationController
 public class CountryPickerViewController: UINavigationController {
+    
+    public struct Settings {
+
+        // style
+        public var prefersLargeTitles = true          // only available greater or equals to iOS 11.0
+        public var hidesSearchBarWhenScrolling = true // only available greater or equals to iOS 11.0
+        
+        // colors
+        public var barTintColor: UIColor?
+        public var cancelButtonColor: UIColor?
+        public var searchBarTintColor: UIColor?
+        
+        // text
+        public var title: String = "Select a country"
+        public var searchBarPlaceholder: String = "Search"
+        
+        // config
+        public var showFlags: Bool = true
+        public var showEmojis: Bool = true
+        public var showDialCode: Bool = true
+        
+        public init() {
+            
+        }
+    }
+    
+    public var settings: Settings?
     
     public weak var pickerDelegate: CountryPickerViewControllerDelegate? {
         didSet {
@@ -44,7 +67,7 @@ public class CountryPickerViewController: UINavigationController {
         
         countriesViewController = CountriesViewController()
         countriesViewController.pickerDelegate = pickerDelegate
-        
+        countriesViewController.settings = settings
         self.viewControllers = [countriesViewController]
     }
 
@@ -53,11 +76,11 @@ public class CountryPickerViewController: UINavigationController {
 class CountriesViewController: BaseCountryTableViewController {
     
     weak var pickerDelegate: CountryPickerViewControllerDelegate?
-
+    
     lazy var countriesInSections = CountryKit.countriesInSections
     lazy var countries: [Country] = CountryKit.countries
     
-    private var pickerMode: PickerMode = .default
+    private var pickerType: PickerType!
     
     var searchController: UISearchController!
     
@@ -71,9 +94,20 @@ class CountriesViewController: BaseCountryTableViewController {
         configureSearchController()
         
         let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.cancel))
+        leftItem.tintColor = settings?.cancelButtonColor ?? UIColor.blue
         self.navigationItem.leftBarButtonItem = leftItem
         
-        self.title = "Select a country"
+        self.title = settings?.title ?? "Select a country"
+        
+        configUI()
+    }
+    
+    func configUI() {
+        
+        guard let settings = settings else { return }
+        
+        self.navigationController?.navigationBar.barTintColor = settings.barTintColor
+        
     }
     
     @objc func cancel() {
@@ -86,19 +120,23 @@ class CountriesViewController: BaseCountryTableViewController {
         
         resultsController = CountryResultsTableController()
         resultsController.tableView.delegate = self
+        resultsController.settings = settings
         
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         
+        searchController.searchBar.placeholder = settings?.searchBarPlaceholder ?? "Search"
+        searchController.searchBar.tintColor = settings?.searchBarTintColor ?? .blue
+        
         if #available(iOS 11.0, *) {
             // For iOS 11 and later, we place the search bar in the navigation bar.
-            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.prefersLargeTitles = settings?.prefersLargeTitles ?? true
             
             navigationItem.searchController = searchController
             
             // We want the search bar visible all the time.
-            navigationItem.hidesSearchBarWhenScrolling = false
+            navigationItem.hidesSearchBarWhenScrolling = settings?.hidesSearchBarWhenScrolling ?? true
         } else {
             // For iOS 10 and earlier, we place the search bar in the table view's header.
             tableView.tableHeaderView = searchController.searchBar

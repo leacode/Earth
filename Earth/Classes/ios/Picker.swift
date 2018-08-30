@@ -9,18 +9,9 @@
 #if os(iOS)
 import UIKit
 
-public enum PickerType {
-    
-    case `default`(items: [String])
-    
-    case country_name
-    case country_flag
-    case country_flag_name
-    case country_flag_name_dialcode
-    
-}
 
-public protocol PickerDelegate: class {
+
+public protocol CountryPickerDelegate: class {
     
     func didPickCountry(_ picker: Picker, didSelectCountry country: Country)
     
@@ -51,9 +42,12 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         // height
         public var rowHeight: CGFloat = 44.0
         
+        public init() {
+            
+        }
     }
     
-    public weak var delegate: PickerDelegate?
+    public weak var delegate: CountryPickerDelegate?
     
     public var settings: Settings = Settings();
     private var pickerType: PickerType!
@@ -65,7 +59,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     var items = [Any]()
 
     public convenience init(textField: UITextField?,
-                            pickerType: PickerType = PickerType.country_flag_name_dialcode) {
+                            pickerType: PickerType = .country) {
         self.init()
 
         self.pickerType = pickerType
@@ -175,6 +169,19 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         
     }
     
+    func scrollToCountry(country: Country) {
+        if let countries = self.items as? [Country] {
+            
+            if let index = countries.index(where: { (aCountry: Country) -> Bool in
+                return country.code == aCountry.code
+            }) {
+                self.pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+            
+        }
+        
+    }
+    
     // MARK: - UIPickerViewDataSource
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -199,81 +206,6 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         switch pickerType! {
-        case .country_flag:
-            let country = items[row] as! Country
-            
-            let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: settings.rowHeight))
-            
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 28.0, height: 20.0))
-            imageView.image = country.flag
-            imageView.contentMode = .scaleAspectFit
-            imageView.center = itemView.center
-            
-            itemView.addSubview(imageView)
-            
-            return itemView
-        case .country_name:
-            let country = items[row] as! Country
-            let titleView = UILabel()
-            titleView.font = settings.cellFont
-            titleView.textAlignment = .center
-            titleView.text = country.name
-            return titleView
-        case .country_flag_name:
-            let country = items[row] as! Country
-            let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44.0))
-            
-            let imageView = UIImageView(frame: CGRect(x: 15, y: 12, width: 28.0, height: 20.0))
-            imageView.image = country.flag
-            
-            itemView.addSubview(imageView)
-            
-            let nameLabel = UILabel(frame: CGRect(x: imageView.frame.maxX + 8,
-                                              y: 0,
-                                              width: UIScreen.main.bounds.size.width - imageView.bounds.width - 25.0,
-                                              height: settings.rowHeight))
-            nameLabel.adjustsFontSizeToFitWidth = true
-            nameLabel.minimumScaleFactor = 0.5
-            nameLabel.numberOfLines = 2
-            nameLabel.font = settings.cellFont
-            nameLabel.textColor = .black
-            nameLabel.text = country.localizedName
-            itemView.addSubview(nameLabel)
-            
-            return itemView
-        case .country_flag_name_dialcode:
-            let country = items[row] as! Country
-            let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44.0))
-            
-            let imageView = UIImageView(frame: CGRect(x: 15, y: 12, width: 28.0, height: 20.0))
-            imageView.image = country.flag
-            
-            itemView.addSubview(imageView)
-            
-            let dialcodeLabelWidth: CGFloat = 80.0
-            
-            let nameLabel = UILabel(frame: CGRect(x: 15 + 28 + 8,
-                                                  y: 0,
-                                                  width: UIScreen.main.bounds.size.width - imageView.bounds.width - 25.0 - dialcodeLabelWidth,
-                                                  height: settings.rowHeight))
-            nameLabel.adjustsFontSizeToFitWidth = true
-            nameLabel.minimumScaleFactor = 0.7
-            nameLabel.numberOfLines = 2
-            nameLabel.font = settings.cellFont
-            nameLabel.textColor = .black
-            nameLabel.text = country.localizedName
-            itemView.addSubview(nameLabel)
-            
-            let dialcodeLabel = UILabel(frame: CGRect(x: nameLabel.frame.minX + nameLabel.bounds.width + 8,
-                                                      y: 0,
-                                                      width: dialcodeLabelWidth,
-                                                      height: settings.rowHeight))
-            
-            dialcodeLabel.font = settings.cellFont
-            dialcodeLabel.textColor = .black
-            dialcodeLabel.text = country.dialCode
-            itemView.addSubview(dialcodeLabel)
-            return itemView
         case .default(_):
             let text = items[row] as! String
             let titleView = UILabel()
@@ -281,9 +213,73 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
             titleView.textAlignment = .center
             titleView.text = text
             return titleView
+        case .country:
+            
+            let country = items[row] as! Country
+            
+            let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: settings.rowHeight))
+            
+            // flag image view
+            let flagView = flagImageView
+            flagView.image = country.flag
+            
+            // country name label
+            let nameLabel = countryNameLabel
+            nameLabel.text = country.localizedName
+            
+            // dial code label
+            let dialLabel = dialCodeLabel
+            dialLabel.text = country.dialCode
+            
+            itemView.addSubview(flagView)
+            itemView.addSubview(nameLabel)
+            itemView.addSubview(dialLabel)
+            
+            return itemView
+        
         }
         
     }
+    
+    let flagWidth: CGFloat = 28.0
+    let flagHeight: CGFloat = 20.0
+    let dialCodeWidth: CGFloat = 60.0
+    
+    var flagImageView: UIImageView {
+        let imageView = UIImageView(frame: CGRect(x: 15, y: settings.rowHeight / 2 - flagHeight / 2, width: flagWidth, height: flagHeight))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
+    
+    var countryNameLabel: UILabel {
+        let nameLabel = UILabel(frame: CGRect(x: 15 + 28 + 8,
+                                              y: 0,
+                                              width: UIScreen.main.bounds.size.width - flagWidth - 25.0 - dialCodeWidth,
+                                              height: settings.rowHeight))
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.7
+        nameLabel.numberOfLines = 2
+        nameLabel.font = settings.cellFont
+        nameLabel.textColor = .black
+        
+        return nameLabel
+    }
+    
+    var dialCodeLabel: UILabel {
+        
+        let dialcodeLabel = UILabel(frame: CGRect(x: UIScreen.main.bounds.size.width - dialCodeWidth - 10,
+                                                  y: 0,
+                                                  width: dialCodeWidth,
+                                                  height: settings.rowHeight))
+        
+        dialcodeLabel.font = settings.cellFont
+        dialcodeLabel.textColor = .black
+        
+        return dialcodeLabel
+        
+    }
+    
+    
     
     // MARK: - UITextFieldDelegate
     
