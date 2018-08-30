@@ -82,6 +82,7 @@ class ViewController: UIViewController {
 
 }
 
+// Handle result from Country PickerView
 extension ViewController: CountryPickerDelegate {
     
     func didPickCountry(_ picker: Picker, didSelectCountry country: Country) {
@@ -91,6 +92,7 @@ extension ViewController: CountryPickerDelegate {
     
 }
 
+// Handle result from CountryPickerViewController
 extension ViewController: CountryPickerViewControllerDelegate {
     
     func countryPickerController(_ countryPickerController: CountryPickerViewController, didSelectCountry country: Country) {
