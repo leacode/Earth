@@ -98,7 +98,7 @@ extension ViewController: CountryPickerViewControllerDelegate {
     func countryPickerController(_ countryPickerController: CountryPickerViewController, didSelectCountry country: Country) {
         countryPickerController.dismiss(animated: true, completion: nil)
         flagImageView.image = country.flag
-        countryTF.text = country.localizedName
+        countryTF.country = country
     }
     
 }

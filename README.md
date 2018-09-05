@@ -20,6 +20,26 @@ An easy to use framework to pick names,dial codes,flags and emojis of countries 
 - CountryTextField class for picking country from a picker view
 - CountryPickerView allows you to select a country from a UITableView
 
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+- iOS 8.0 and above. 
+- Mac OS 10.10 and above.
+
+
+## Installation
+
+Earth is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'Earth'
+```
+
 ## How to use
 
 - Getting countries' infomation (Support both Mac OS and iOS)
@@ -116,25 +136,6 @@ countryPicker.settings = settings
                 
 present(countryPicker, animated: true, completion: nil)
 
-```
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-- iOS 8.0 and above. 
-- Mac OS 10.10 and above.
-
-
-## Installation
-
-Earth is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'Earth'
 ```
 
 ## Author
