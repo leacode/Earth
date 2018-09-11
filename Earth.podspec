@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'A custmizable and easy to use framework contains Country Picker and awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
 It offers different kind of pickers for picking infomations about countries etc. You can access vector images of flags. It support 12 kinds of languages.
@@ -24,15 +24,15 @@ It offers different kind of pickers for picking infomations about countries etc.
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target  = '10.10'
   
-  s.source_files       = 'Earth/Classes/*.swift'
-  s.ios.source_files   = 'Earth/Classes/ios/*.swift'
+  s.source_files       = 'Sources/Earth/*.swift'
+  s.ios.source_files   = 'Sources/ios/*.swift'
   # s.osx.source_files   = 'Earth/Classes/osx/*.swift'
 
-  s.ios.source_files = 'Earth/Classes/**/*'
-  s.osx.source_files = 'Earth/Classes/**/*'
+  # s.ios.source_files = 'Earth/Classes/**/*'
+  # s.osx.source_files = 'Earth/Classes/**/*'
   
   s.resource_bundles = {
-    'Earth' => ['Earth/Assets/*', 'Earth/Assets/*.lproj/*.strings', 'Earth/Assets/*.xcassets',]
+    'Earth' => ['Resources/*', 'Resources/*.lproj/*.strings', 'Resources/*.xcassets',]
   }
   
   s.ios.framework  = 'UIKit'

@@ -1,5 +1,5 @@
 PODS:
-  - Earth (0.1.1)
+  - Earth (0.1.3)
 
 DEPENDENCIES:
   - Earth (from `../../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Earth: 24da31a72d3ddab4c7c98921a29318b08bf1fd7f
+  Earth: 50831cec6d70c26790623b2719e95092ddceef6e
 
 PODFILE CHECKSUM: 51fe699a8ed789641d7f38701fe5f01fe5f18260
 
