@@ -33,11 +33,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+### CocoaPods
+
 Earth is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'Earth'
+```
+
+### Swift Package Manager
+
+Since [Swift Package Manager](https://swift.org/package-manager/) is not support binding resources into frameworks. Vector flags are not available in this way.
+
+```
+dependencies: [
+    .package(url: "https://github.com/leacode/Earth.git", from: "0.1.5"),
+]
 ```
 
 ## How to use
