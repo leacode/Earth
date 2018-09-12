@@ -4,7 +4,12 @@
 //
 //  Created by leacode on 2018/8/19.
 //
+
+
+
 #if os(iOS)
+import UIKit
+
 class BaseCountryTableViewController: UITableViewController {
 
     let cellId = "countryCell"

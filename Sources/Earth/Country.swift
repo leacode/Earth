@@ -34,7 +34,7 @@ public class Country: Codable {
         
         let frameworkBundle = Bundle(for: CountryKit.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!) ?? Bundle.main
+        let resourceBundle = Bundle(url: bundleURL!) ?? frameworkBundle
         
         #if os(iOS)
         return UIImage(named: code.uppercased(), in: resourceBundle, compatibleWith: nil)
@@ -49,7 +49,7 @@ public class Country: Codable {
         
         let frameworkBundle = Bundle(for: CountryKit.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!) ?? Bundle.main
+        let resourceBundle = Bundle(url: bundleURL!) ?? frameworkBundle
         
         return NSLocalizedString(name, tableName: "Localizable", bundle: resourceBundle, value: "", comment: "country name")
     }
