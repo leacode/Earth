@@ -5,6 +5,7 @@
 //  Created by leacode on 2018/8/11.
 //  Copyright © 2018 leacode. All rights reserved.
 //
+import Foundation
 
 #if os(iOS)
 import UIKit

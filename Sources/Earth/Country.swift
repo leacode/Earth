@@ -6,6 +6,8 @@
 //  Copyright © 2018 leacode. All rights reserved.
 //
 
+import Foundation
+
 #if os(iOS)
 import UIKit
 #elseif os(macOS)
@@ -26,6 +28,7 @@ public class Country: Codable {
     /// the emoji of the country's flag. e.g. 🇺🇸
     public var emoji: String
     
+    #if os(iOS) || os(macOS)
     /// vector image of the country's flag
     public var flag: PlatformImage? {
         
@@ -39,6 +42,7 @@ public class Country: Codable {
         return resourceBundle.image(forResource: NSImage.Name(rawValue: code.uppercased()))
         #endif
     }
+    #endif
     
     /// localized name of the country
     public var localizedName: String {
@@ -50,9 +54,11 @@ public class Country: Codable {
         return NSLocalizedString(name, tableName: "Localizable", bundle: resourceBundle, value: "", comment: "country name")
     }
     
+    #if os(iOS) || os(macOS)
     @objc func getLocalizedName() -> String {
         return self.localizedName
     }
+    #endif
     
     var stringForSearch: String {
         return "\(name.lowercased())\(dialCode)\(code.lowercased())\(emoji)\(localizedName)"

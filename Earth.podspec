@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A custmizable and easy to use framework contains Country Picker and awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
 It offers different kind of pickers for picking infomations about countries etc. You can access vector images of flags. It support 12 kinds of languages.
