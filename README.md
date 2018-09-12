@@ -35,12 +35,47 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ### CocoaPods
 
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
 Earth is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Earth'
+use_frameworks!
+
+target '<Your Target Name>' do
+pod 'Earth', '~> 0.1.6'
+end
 ```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](https://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Earth into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "leacode/Earth" ~> 0.1.6
+```
+
+Run `carthage update` to build the framework and drag the built `Earth.framework` into your Xcode project.
 
 ### Swift Package Manager
 
@@ -48,7 +83,7 @@ Since [Swift Package Manager](https://swift.org/package-manager/) is not support
 
 ```
 dependencies: [
-    .package(url: "https://github.com/leacode/Earth.git", from: "0.1.5"),
+    .package(url: "https://github.com/leacode/Earth.git", from: "0.1.6"),
 ]
 ```
 
