@@ -72,7 +72,7 @@ $ brew install carthage
 To integrate Earth into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "leacode/Earth" ~> 0.1.6
+github "leacode/Earth" ~> 0.1.7
 ```
 
 Run `carthage update` to build the framework and drag the built `Earth.framework` into your Xcode project.
