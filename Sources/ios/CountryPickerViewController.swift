@@ -27,9 +27,9 @@ public class CountryPickerViewController: UINavigationController {
     
     public struct Settings {
 
-        // style
-        public var prefersLargeTitles = true          // only available greater or equals to iOS 11.0
-        public var hidesSearchBarWhenScrolling = true // only available greater or equals to iOS 11.0
+        // style (only available greater or equals to iOS 11.0)
+        public var prefersLargeTitles: Bool          = true
+        public var hidesSearchBarWhenScrolling: Bool = true
         
         // colors
         public var barTintColor: UIColor?
@@ -41,8 +41,8 @@ public class CountryPickerViewController: UINavigationController {
         public var searchBarPlaceholder: String = "Search"
         
         // config
-        public var showFlags: Bool = true
-        public var showEmojis: Bool = true
+        public var showFlags: Bool    = true
+        public var showEmojis: Bool   = true
         public var showDialCode: Bool = true
         
         public init() {
@@ -77,23 +77,20 @@ class CountriesViewController: BaseCountryTableViewController {
     
     weak var pickerDelegate: CountryPickerViewControllerDelegate?
     
-    lazy var countriesInSections = CountryKit.countriesInSections
-    lazy var countries: [Country] = CountryKit.countries
+    private lazy var countries: [Country] = CountryKit.countries
     
-    private var pickerType: PickerType!
+    private lazy var countriesInSections = prepareCountriesInSections()
     
-    var searchController: UISearchController!
+    private var searchController: UISearchController!
     
-    var resultsController: CountryResultsTableController!
+    private var resultsController: CountryResultsTableController!
     
-    var selectedSearchedCountry: Country! = nil
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
         configureSearchController()
         
-        let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.cancel))
+        let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancel))
         leftItem.tintColor = settings?.cancelButtonColor ?? UIColor.blue
         self.navigationItem.leftBarButtonItem = leftItem
         
@@ -125,7 +122,6 @@ class CountriesViewController: BaseCountryTableViewController {
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
-        
         searchController.searchBar.placeholder = settings?.searchBarPlaceholder ?? "Search"
         searchController.searchBar.tintColor = settings?.searchBarTintColor ?? .blue
         
@@ -142,7 +138,6 @@ class CountriesViewController: BaseCountryTableViewController {
             tableView.tableHeaderView = searchController.searchBar
         }
         
-        searchController.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         
@@ -239,29 +234,48 @@ extension CountriesViewController: UISearchResultsUpdating {
     
 }
 
-// MARK: - UISearchControllerDelegate
-
-extension CountriesViewController: UISearchControllerDelegate {
+// MARK: - Utils
+extension CountriesViewController {
     
-    func presentSearchController(_ searchController: UISearchController) {
-        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
-    }
-    
-    func willPresentSearchController(_ searchController: UISearchController) {
-        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
-    }
-    
-    func didPresentSearchController(_ searchController: UISearchController) {
-        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
-    }
-    
-    func willDismissSearchController(_ searchController: UISearchController) {
-        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
-    }
-    
-    func didDismissSearchController(_ searchController: UISearchController) {
-        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    func prepareCountriesInSections() -> (sectionTitles: [String], countriesInSections: [[Country]]) {
+        
+        let countries = CountryKit.countries
+        let collation = UILocalizedIndexedCollation.current()
+        var sectionsArray: [[Country]] = []
+        
+        var sectionIndexTitles = collation.sectionIndexTitles
+        
+        let sectionTitleCount = collation.sectionTitles.count
+        
+        for _ in 0..<sectionTitleCount {
+            sectionsArray.append([])
+        }
+        
+        for country in countries {
+            let sectionNumber = collation.section(for: country, collationStringSelector: #selector(Country.getLocalizedName))
+            sectionsArray[sectionNumber].append(country)
+        }
+        
+        var sectionsToRemove: [Int] = []
+        for index in 0..<sectionTitleCount {
+            
+            let arrayInSection = sectionsArray[index]
+            
+            if arrayInSection.count == 0 {
+                sectionsToRemove.append(sectionsArray.index(index, offsetBy: 0))
+            } else {
+                let sortedCountriesArraysForSection = collation.sortedArray(from: arrayInSection, collationStringSelector: #selector(Country.getLocalizedName))
+                sectionsArray[index] = sortedCountriesArraysForSection as! [Country]
+            }
+        }
+        
+        sectionIndexTitles.removeObjectAtIndexes(indexes: sectionsToRemove)
+        sectionsArray.removeObjectAtIndexes(indexes: sectionsToRemove)
+        
+        return (sectionIndexTitles, sectionsArray)
     }
     
 }
+
+
 #endif

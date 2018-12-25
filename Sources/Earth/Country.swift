@@ -31,27 +31,17 @@ public class Country: Codable {
     #if os(iOS) || os(macOS)
     /// vector image of the country's flag
     public var flag: PlatformImage? {
-        
-        let frameworkBundle = Bundle(for: CountryKit.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!) ?? frameworkBundle
-        
         #if os(iOS)
-        return UIImage(named: code.uppercased(), in: resourceBundle, compatibleWith: nil)
+        return UIImage(named: code.uppercased(), in: frameworkBundle, compatibleWith: nil)
         #elseif os(macOS)
-        return resourceBundle.image(forResource: NSImage.Name(rawValue: code.uppercased()))
+        return frameworkBundle.image(forResource: NSImage.Name(rawValue: code.uppercased()))
         #endif
     }
     #endif
     
     /// localized name of the country
     public var localizedName: String {
-        
-        let frameworkBundle = Bundle(for: CountryKit.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!) ?? frameworkBundle
-        
-        return NSLocalizedString(name, tableName: "Localizable", bundle: resourceBundle, value: "", comment: "country name")
+        return NSLocalizedString(name, tableName: "Localizable", bundle: frameworkBundle, value: "", comment: "country name")
     }
     
     #if os(iOS) || os(macOS)

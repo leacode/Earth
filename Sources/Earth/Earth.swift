@@ -10,11 +10,11 @@ import Foundation
 #if os(iOS)
 import UIKit
 typealias PlatformViewController = UIViewController
-public typealias PlatformImage = UIImage
+public typealias PlatformImage   = UIImage
 #elseif os(macOS)
 import Cocoa
 typealias PlatformViewController = NSViewController
-public typealias PlatformImage = NSImage
+public typealias PlatformImage   = NSImage
 #endif
 
-public typealias CountryUtil = CountryKit
+public typealias CountryUtil     = CountryKit

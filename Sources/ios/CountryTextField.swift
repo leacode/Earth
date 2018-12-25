@@ -41,12 +41,12 @@ import UIKit
         picker = Picker(textField: self)
         picker?.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldDidBeginEditing(tf:)), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldDidBeginEditing(tf:)), name: UITextField.textDidBeginEditingNotification, object: self)
         
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidBeginEditingNotification, object: self)
     }
     
     @objc private func textFieldDidBeginEditing(tf: UITextField) {

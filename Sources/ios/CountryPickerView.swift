@@ -79,8 +79,6 @@ extension CountryPickerView: UIPickerViewDelegate {
         
         itemView.addSubview(label)
         
-        
-        
         return itemView
     }
     

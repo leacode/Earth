@@ -5,6 +5,7 @@
 //  Created by leacode on 2018/8/11.
 //  Copyright © 2018 leacode. All rights reserved.
 //
+
 import Foundation
 
 #if os(iOS)
@@ -15,24 +16,15 @@ import AppKit
 
 public class CountryKit {
     
-    #if os(iOS)
-    public static func flag(countryCode: String) -> UIImage? {
+    #if os(iOS) || os(macOS)
+    public static func flag(countryCode: String) -> PlatformImage? {
         
-        let frameworkBundle = Bundle(for: CountryKit.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
-        let image = UIImage(named: countryCode, in: resourceBundle, compatibleWith: nil)
-
-        return image
-    }
-    #elseif os(macOS)
-    public static func flag(countryCode: String) -> NSImage? {
+        #if os(iOS)
+        return UIImage(named: countryCode, in: frameworkBundle, compatibleWith: nil)
+        #elseif os(macOS)
+        return frameworkBundle.image(forResource: NSImage.Name(rawValue: countryCode.uppercased()))
+        #endif
         
-        let frameworkBundle = Bundle(for: CountryKit.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
-        
-        return resourceBundle?.image(forResource: NSImage.Name(rawValue: countryCode.uppercased()))
     }
     #endif
     
@@ -53,46 +45,6 @@ public class CountryKit {
         }.first
         
     }
-    
-    #if os(iOS)
-    public static var countriesInSections: (sectionTitles: [String], countriesInSections: [[Country]]) {
-        
-        let countries = self.countries
-        let collation = UILocalizedIndexedCollation.current()
-        var sectionsArray: [[Country]] = []
-        
-        var sectionIndexTitles = collation.sectionIndexTitles
-        
-        let sectionTitleCount = collation.sectionTitles.count
-        
-        for _ in 0..<sectionTitleCount {
-            sectionsArray.append([])
-        }
-        
-        for country in countries {
-            let sectionNumber = collation.section(for: country, collationStringSelector: #selector(Country.getLocalizedName))
-            sectionsArray[sectionNumber].append(country)
-        }
-        
-        var sectionsToRemove: [Int] = []
-        for index in 0..<sectionTitleCount {
-            
-            let arrayInSection = sectionsArray[index]
-            
-            if arrayInSection.count == 0 {
-                sectionsToRemove.append(sectionsArray.index(index, offsetBy: 0))
-            } else {
-                let sortedCountriesArraysForSection = collation.sortedArray(from: arrayInSection, collationStringSelector: #selector(Country.getLocalizedName))
-                sectionsArray[index] = sortedCountriesArraysForSection as! [Country]
-            }
-            
-        }
-        sectionIndexTitles.removeObjectAtIndexes(indexes: sectionsToRemove)
-        sectionsArray.removeObjectAtIndexes(indexes: sectionsToRemove)
-        
-        return (sectionIndexTitles, sectionsArray)
-    }
-    #endif
     
 }
 
