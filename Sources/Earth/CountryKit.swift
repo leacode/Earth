@@ -19,10 +19,14 @@ public class CountryKit {
     #if os(iOS) || os(macOS)
     public static func flag(countryCode: String) -> PlatformImage? {
         
+        let frameworkBundle = Bundle(for: CountryKit.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Earth.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        
         #if os(iOS)
         return UIImage(named: countryCode, in: frameworkBundle, compatibleWith: nil)
         #elseif os(macOS)
-        return frameworkBundle.image(forResource: NSImage.Name(rawValue: countryCode.uppercased()))
+        return resourceBundle!.image(forResource: countryCode.uppercased())
         #endif
         
     }
