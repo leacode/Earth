@@ -35,7 +35,7 @@ It offers different kind of pickers for picking infomations about countries etc.
     'Earth' => ['Resources/*', 'Resources/*.lproj/*.strings', 'Resources/*.xcassets',]
   }
   
-  s.ios.framework  = 'UIKit'
+  s.ios.framework  = 'UIKit', 'Foundation'
   s.osx.framework  = 'AppKit'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
