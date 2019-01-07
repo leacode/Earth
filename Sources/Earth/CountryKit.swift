@@ -41,7 +41,7 @@ public class CountryKit {
     public static func country(countryCode: String) -> Country? {
         
         return countries.filter { (country: Country) -> Bool in
-            return country.code == countryCode
+            return country.code.uppercased() == countryCode.uppercased()
         }.first
         
     }
