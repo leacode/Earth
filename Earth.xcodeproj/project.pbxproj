@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		6D5E33D4214A65AD007E6A46 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		6D6A483F21D9DF110032FF4D /* LanguageJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageJSON.swift; sourceTree = "<group>"; };
+		6D91B83121E3A2FF00DE0E9E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DA5508A2148C6040008477E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DA5508B2148C6040008477E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DA5508C2148C6040008477E /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		6DAD767E2148BC290026204B = {
 			isa = PBXGroup;
 			children = (
+				6D91B83121E3A2FF00DE0E9E /* README.md */,
 				6DA550872148C5EF0008477E /* Earth */,
 				6DAD76892148BC290026204B /* Products */,
 			);
