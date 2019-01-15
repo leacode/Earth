@@ -56,6 +56,12 @@ playground.xcworkspace
 #
 Pods/
 
+Example/ios/Podfile.lock
+Example/osx/Podfile.lock
+Example/ios/Earth.xcworkspace
+Example/osx/Earth_Macos.xcworkspace
+
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
