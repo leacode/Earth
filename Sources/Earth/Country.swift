@@ -42,7 +42,6 @@ public class Country: Codable {
     
     /// localized name of the country
     public var localizedName: String {
-        
         return NSLocalizedString(name, tableName: "Localizable", bundle: frameworkBundle, value: "", comment: "country name")
     }
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbW-qc-bZI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbW-qc-bZI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="waT-VB-dfR">
             <objects>
-                <viewController id="cbW-qc-bZI" customClass="ViewController" customModule="Earth_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cbW-qc-bZI" customClass="ViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nJT-NU-dcn"/>
                         <viewControllerLayoutGuide type="bottom" id="XxO-bY-DfR"/>
@@ -48,12 +48,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="w4A-XV-OQl" firstAttribute="top" secondItem="nJT-NU-dcn" secondAttribute="bottom" constant="129" id="CcR-wS-gi0"/>
-                            <constraint firstItem="KsW-tk-dh7" firstAttribute="top" secondItem="w4A-XV-OQl" secondAttribute="bottom" constant="28" id="GA5-0j-342"/>
+                            <constraint firstItem="w4A-XV-OQl" firstAttribute="top" secondItem="6kf-yx-nAi" secondAttribute="top" constant="129" id="5Rj-ay-5r4"/>
                             <constraint firstItem="KsW-tk-dh7" firstAttribute="centerX" secondItem="XB2-FC-G3V" secondAttribute="centerX" id="O7I-MR-4bz"/>
                             <constraint firstItem="w4A-XV-OQl" firstAttribute="centerX" secondItem="XB2-FC-G3V" secondAttribute="centerX" id="RHD-uo-wEh"/>
                             <constraint firstItem="gvu-Sb-klS" firstAttribute="centerX" secondItem="XB2-FC-G3V" secondAttribute="centerX" id="apu-r4-UbP"/>
-                            <constraint firstItem="XxO-bY-DfR" firstAttribute="top" secondItem="gvu-Sb-klS" secondAttribute="bottom" constant="182" id="gpb-WS-wNd"/>
+                            <constraint firstItem="6kf-yx-nAi" firstAttribute="bottom" secondItem="gvu-Sb-klS" secondAttribute="bottom" constant="182" id="fxT-5l-0l4"/>
+                            <constraint firstItem="KsW-tk-dh7" firstAttribute="top" secondItem="w4A-XV-OQl" secondAttribute="bottom" constant="28" id="mds-S7-zlv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6kf-yx-nAi"/>
                     </view>

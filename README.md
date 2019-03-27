@@ -1,6 +1,6 @@
 # Earth
 
-An easy to use framework to pick names,dial codes,flags and emojis of countries all around the world.
+An easy to use framework for you to pick names,dial codes,flags and emojis of countries all around the world.
 
 [![Version](https://img.shields.io/cocoapods/v/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
 [![License](https://img.shields.io/cocoapods/l/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
@@ -28,6 +28,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 - iOS 8.0 and above. 
 - Mac OS 10.10 and above.
+- version >= 1.0.0 support Swift 5
+- version 0.2.0 supports Swift 4.2
+
 
 
 ## Installation
@@ -47,7 +50,7 @@ it, simply add the following line to your Podfile:
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'Earth', '~> 0.2.0'
+pod 'Earth', '~> 1.0.0'
 end
 ```
 
@@ -71,7 +74,7 @@ $ brew install carthage
 To integrate Earth into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "leacode/Earth" ~> 0.2.0
+github "leacode/Earth" ~> 1.0.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Earth.framework` into your Xcode project.
@@ -82,7 +85,7 @@ Since [Swift Package Manager](https://swift.org/package-manager/) is not support
 
 ```
 dependencies: [
-    .package(url: "https://github.com/leacode/Earth.git", from: "0.2.0"),
+    .package(url: "https://github.com/leacode/Earth.git", from: "1.0.0"),
 ]
 ```
 

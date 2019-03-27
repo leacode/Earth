@@ -127,9 +127,9 @@
 			children = (
 				6DA550A42148C6100008477E /* CountryPickerView.swift */,
 				6DA550A52148C6100008477E /* Picker.swift */,
-				6DA550A62148C6100008477E /* CountryResultsTableController.swift */,
 				6DA550A72148C6100008477E /* UIImage+Scale.swift */,
 				6DA550A82148C6100008477E /* BaseCountryTableViewController.swift */,
+				6DA550A62148C6100008477E /* CountryResultsTableController.swift */,
 				6DA550A92148C6100008477E /* CountryPickerViewController.swift */,
 				6DA550AA2148C6100008477E /* CountryTextField.swift */,
 				6DA550AB2148C6100008477E /* CountryCell.swift */,
@@ -240,7 +240,10 @@
 				TargetAttributes = {
 					6DAD76872148BC290026204B = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
+					};
+					6DAD76CF2148C0180026204B = {
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -271,6 +274,7 @@
 				id,
 				th,
 				ro,
+				Base,
 			);
 			mainGroup = 6DAD767E2148BC290026204B;
 			productRefGroup = 6DAD76892148BC290026204B /* Products */;
@@ -519,7 +523,7 @@
 				PRODUCT_NAME = Earth;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,7 +549,7 @@
 				PRODUCT_NAME = Earth;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -573,7 +577,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -602,7 +606,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64";
 			};

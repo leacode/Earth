@@ -225,11 +225,14 @@ extension CountriesViewController: UISearchResultsUpdating {
             return countryLocalizedName.contains(searchText)
         })
         
-        // Hand over the filtered results to our search results table.
-        if let resultsController = searchController.searchResultsController as? CountryResultsTableController {
-            resultsController.filteredCountries = filteredResults
-            resultsController.tableView.reloadData()
-        }
+        resultsController.filteredCountries = filteredResults
+        resultsController.tableView.reloadData();
+        
+//        // Hand over the filtered results to our search results table.
+//        if let resultsController = searchController.searchResultsController as? CountryResultsTableController {
+//            resultsController.filteredCountries = filteredResults
+//            resultsController.tableView.reloadData()
+//        }
     }
     
 }

@@ -182,7 +182,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     func scrollToCountry(country: Country) {
         if let countries = self.items as? [Country] {
             
-            if let index = countries.index(where: { (aCountry: Country) -> Bool in
+            if let index = countries.firstIndex(where: { (aCountry: Country) -> Bool in
                 return country.code == aCountry.code
             }) {
                 self.pickerView.selectRow(index, inComponent: 0, animated: false)
