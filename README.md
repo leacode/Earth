@@ -8,8 +8,8 @@
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage/)
 
 
-<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true" width="267px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778904323.png?raw=true" width="267px"/>
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true" width="267px"/> &nbsp;&nbsp;&nbsp;
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778904323.png?raw=true" width="267px"/> &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778992489.png?raw=true" width="267px"/> 
 
 
