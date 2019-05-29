@@ -8,7 +8,7 @@
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage/)
 
 
-<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true" width="267px"/> 
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true" width="267px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778904323.png?raw=true" width="267px"/>
 <img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778992489.png?raw=true" width="267px"/> 
 
@@ -47,7 +47,7 @@ it, simply add the following line to your Podfile:
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'Earth', '~> 1.0.0'
+pod 'Earth', '~> 1.1.0'
 end
 ```
 
@@ -71,7 +71,7 @@ $ brew install carthage
 To integrate Earth into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "leacode/Earth" ~> 1.0.0
+github "leacode/Earth" ~> 1.1.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Earth.framework` into your Xcode project.
@@ -82,7 +82,7 @@ Since [Swift Package Manager](https://swift.org/package-manager/) is not support
 
 ```
 dependencies: [
-    .package(url: "https://github.com/leacode/Earth.git", from: "1.0.0"),
+    .package(url: "https://github.com/leacode/Earth.git", from: "1.1.0"),
 ]
 ```
 
