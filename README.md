@@ -1,16 +1,17 @@
 # Earth
 
-An easy to use framework for you to pick names,dial codes,flags and emojis of countries all around the world.
+**Earth** is a library for picking names,dial codes,flags and emojis of countries all around the world. For both iOS and MacOS
 
 [![Version](https://img.shields.io/cocoapods/v/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
 [![License](https://img.shields.io/cocoapods/l/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
 [![Platform](https://img.shields.io/cocoapods/p/Earth.svg?style=flat)](https://cocoapods.org/pods/Earth)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage/)
 
-![](https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true "Optional Title")
 
-![](https://github.com/leacode/Earth/blob/master/screenshot/1534778904323.png?raw=true "Optional Title")
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778864358.png?raw=true" width="267px"/> 
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778904323.png?raw=true" width="267px"/>
+<img src="https://github.com/leacode/Earth/blob/master/screenshot/1534778992489.png?raw=true" width="267px"/> 
 
-![Alt text](https://github.com/leacode/Earth/blob/master/screenshot/1534778992489.png?raw=true "Optional Title")
 
 ## Features
 
@@ -26,12 +27,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 8.0 and above. 
-- Mac OS 10.10 and above.
-- version >= 1.0.0 support Swift 5
-- version 0.2.0 supports Swift 4.2
-
-
+- iOS 8.0+ / macOS 10.10+ 
+- Swift 5.0+
 
 ## Installation
 

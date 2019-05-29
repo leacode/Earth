@@ -8,9 +8,9 @@
 import Foundation
 
 public enum PickerType {
-    
+
     case `default`(items: [String])
-    
+
     case country
-    
+
 }

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D5E33D5214A65AD007E6A46 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5E33D4214A65AD007E6A46 /* Helpers.swift */; };
 		6D5E33D6214A65BE007E6A46 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5E33D4214A65AD007E6A46 /* Helpers.swift */; };
-		6D6A484021D9DF110032FF4D /* LanguageJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A483F21D9DF110032FF4D /* LanguageJSON.swift */; };
-		6D6A484121D9DF110032FF4D /* LanguageJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A483F21D9DF110032FF4D /* LanguageJSON.swift */; };
+		6D6D4102229E30C800EFA063 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D6D4101229E30C800EFA063 /* countries.json */; };
+		6D6D4103229E313700EFA063 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D6D4101229E30C800EFA063 /* countries.json */; };
 		6DA550A12148C6040008477E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DA550892148C6040008477E /* Localizable.strings */; };
 		6DA550A22148C6040008477E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5508D2148C6040008477E /* Media.xcassets */; };
 		6DA550B42148C6100008477E /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550A42148C6100008477E /* CountryPickerView.swift */; };
@@ -25,13 +25,11 @@
 		6DA550BD2148C6100008477E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550AE2148C6100008477E /* Enums.swift */; };
 		6DA550BE2148C6100008477E /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550AF2148C6100008477E /* Earth.swift */; };
 		6DA550BF2148C6100008477E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550B02148C6100008477E /* Country.swift */; };
-		6DA550C02148C6100008477E /* CountryJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550B12148C6100008477E /* CountryJSON.swift */; };
 		6DA550C22148C6100008477E /* Earth.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DA550B32148C6100008477E /* Earth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DA550C32148C6210008477E /* CountryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550AD2148C6100008477E /* CountryKit.swift */; };
 		6DA550C42148C6210008477E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550AE2148C6100008477E /* Enums.swift */; };
 		6DA550C52148C6210008477E /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550AF2148C6100008477E /* Earth.swift */; };
 		6DA550C62148C6210008477E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550B02148C6100008477E /* Country.swift */; };
-		6DA550C72148C6210008477E /* CountryJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA550B12148C6100008477E /* CountryJSON.swift */; };
 		6DA550C82148C62A0008477E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DA550892148C6040008477E /* Localizable.strings */; };
 		6DA550C92148C62D0008477E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5508D2148C6040008477E /* Media.xcassets */; };
 		6DA550CA2148C69A0008477E /* Earth.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DA550B32148C6100008477E /* Earth.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		6D5E33D4214A65AD007E6A46 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		6D6A483F21D9DF110032FF4D /* LanguageJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageJSON.swift; sourceTree = "<group>"; };
+		6D6D4101229E30C800EFA063 /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		6D91B83121E3A2FF00DE0E9E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DA5508A2148C6040008477E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DA5508B2148C6040008477E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 		6DA550AE2148C6100008477E /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6DA550AF2148C6100008477E /* Earth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
 		6DA550B02148C6100008477E /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		6DA550B12148C6100008477E /* CountryJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryJSON.swift; sourceTree = "<group>"; };
 		6DA550B22148C6100008477E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		6DA550B32148C6100008477E /* Earth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Earth.h; path = Sources/Earth.h; sourceTree = "<group>"; };
 		6DAD76882148BC290026204B /* Earth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Earth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +115,7 @@
 			children = (
 				6DA550892148C6040008477E /* Localizable.strings */,
 				6DA5508D2148C6040008477E /* Media.xcassets */,
+				6D6D4101229E30C800EFA063 /* countries.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -145,8 +143,6 @@
 				6DA550AE2148C6100008477E /* Enums.swift */,
 				6DA550AF2148C6100008477E /* Earth.swift */,
 				6DA550B02148C6100008477E /* Country.swift */,
-				6DA550B12148C6100008477E /* CountryJSON.swift */,
-				6D6A483F21D9DF110032FF4D /* LanguageJSON.swift */,
 				6D5E33D4214A65AD007E6A46 /* Helpers.swift */,
 			);
 			name = Earth;
@@ -201,6 +197,7 @@
 				6DAD76842148BC290026204B /* Frameworks */,
 				6DAD76852148BC290026204B /* Headers */,
 				6DAD76862148BC290026204B /* Resources */,
+				6D6D4100229E22FD00EFA063 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -292,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6D4102229E30C800EFA063 /* countries.json in Resources */,
 				6DA550A22148C6040008477E /* Media.xcassets in Resources */,
 				6DA550A12148C6040008477E /* Localizable.strings in Resources */,
 			);
@@ -301,12 +299,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6D4103229E313700EFA063 /* countries.json in Resources */,
 				6DA550C92148C62D0008477E /* Media.xcassets in Resources */,
 				6DA550C82148C62A0008477E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D6D4100229E22FD00EFA063 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6DAD76832148BC290026204B /* Sources */ = {
@@ -322,9 +341,7 @@
 				6D5E33D5214A65AD007E6A46 /* Helpers.swift in Sources */,
 				6DA550B52148C6100008477E /* Picker.swift in Sources */,
 				6DA550B72148C6100008477E /* UIImage+Scale.swift in Sources */,
-				6DA550C02148C6100008477E /* CountryJSON.swift in Sources */,
 				6DA550B82148C6100008477E /* BaseCountryTableViewController.swift in Sources */,
-				6D6A484021D9DF110032FF4D /* LanguageJSON.swift in Sources */,
 				6DA550B62148C6100008477E /* CountryResultsTableController.swift in Sources */,
 				6DA550BA2148C6100008477E /* CountryTextField.swift in Sources */,
 				6DA550B92148C6100008477E /* CountryPickerViewController.swift in Sources */,
@@ -335,9 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6A484121D9DF110032FF4D /* LanguageJSON.swift in Sources */,
 				6DA550C62148C6210008477E /* Country.swift in Sources */,
-				6DA550C72148C6210008477E /* CountryJSON.swift in Sources */,
 				6DA550C42148C6210008477E /* Enums.swift in Sources */,
 				6DA550C32148C6210008477E /* CountryKit.swift in Sources */,
 				6D5E33D6214A65BE007E6A46 /* Helpers.swift in Sources */,

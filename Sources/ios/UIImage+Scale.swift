@@ -10,15 +10,15 @@
 import UIKit
 
 extension UIImage {
-    
-    func resize(size:CGSize) -> UIImage? {
+
+    func resize(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, true, self.scale)
         self.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        
+
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resizedImage
     }
-    
+
 }
 #endif

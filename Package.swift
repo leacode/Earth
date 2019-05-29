@@ -6,11 +6,11 @@ import PackageDescription
 let package = Package(
     name: "Earth",
     products: [
-        .library(name: "Earth", targets: ["Earth"]),
+        .library(name: "Earth", targets: ["Earth"])
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Earth", dependencies: []),
+            name: "Earth", dependencies: [])
     ]
 )

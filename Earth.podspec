@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '1.0.0'
-  s.summary          = 'A custmizable and easy to use framework contains Country Picker and awesome vector flags. Support both iOS and MacOS'
+  s.version          = '1.1.0'
+  s.summary          = 'A custmizable and easy to use framework contains Country Picker with awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
 It offers different kind of pickers for picking infomations about countries etc. You can access vector images of flags. It support 12 kinds of languages.
                        DESC
@@ -26,10 +26,6 @@ It offers different kind of pickers for picking infomations about countries etc.
   
   s.source_files       = 'Sources/Earth/*.swift'
   s.ios.source_files   = 'Sources/ios/*.swift'
-  # s.osx.source_files   = 'Earth/Classes/osx/*.swift'
-
-  # s.ios.source_files = 'Earth/Classes/**/*'
-  # s.osx.source_files = 'Earth/Classes/**/*'
   
   s.resource_bundles = {
     'Earth' => ['Resources/*', 'Resources/*.lproj/*.strings', 'Resources/*.xcassets',]
@@ -38,7 +34,4 @@ It offers different kind of pickers for picking infomations about countries etc.
   s.ios.framework  = 'UIKit', 'Foundation'
   s.osx.framework  = 'AppKit'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

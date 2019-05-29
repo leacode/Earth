@@ -10,26 +10,21 @@ import Cocoa
 import Quartz
 import Earth
 
-
 class ViewController: NSViewController {
-    
-    
+
     @IBOutlet weak var flagImageView: NSImageView!
     @IBOutlet weak var countryNameTF: NSTextField!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(CountryKit.countries.count)
-        
+
         if let country = CountryKit.country(countryCode: "CN") {
             flagImageView.image = country.flag
             countryNameTF.stringValue = country.localizedName
         }
-        
-        
-        // Do any additional setup after loading the view.
+
     }
 
     override var representedObject: Any? {
@@ -38,6 +33,4 @@ class ViewController: NSViewController {
         }
     }
 
-
 }
-

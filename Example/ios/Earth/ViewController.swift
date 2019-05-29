@@ -10,20 +10,20 @@ import UIKit
 import Earth
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var countryTF: CountryTextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Config the pickerView
-        
+
         var settings = Picker.Settings()
         // style
         settings.barStyle = UIBarStyle.default  // Set toobar style
         settings.displayCancelButton = true     // show cancel button or not
-        
+
         // font
         settings.cellFont = UIFont.systemFont(ofSize: 15.0) // set font color
 
@@ -40,30 +40,30 @@ class ViewController: UIViewController {
 
         // height
         settings.rowHeight = 44.0
-        
+
         countryTF.settings = settings
         countryTF.pickerDelegate = self
-        
+
         if let country = CountryKit.country(countryCode: "CN") {
             flagImageView.image = country.flag
             countryTF.country = country
         }
-        
+
     }
 
     @IBAction func selectCountry(_ sender: Any) {
-        
+
         let countryPicker = CountryPickerViewController()
         countryPicker.pickerDelegate = self
-        
+
         // Config the appearance of CountryPickerViewController
-        
+
         var settings = CountryPickerViewController.Settings()
-        
+
         // style
         settings.prefersLargeTitles = false
         settings.hidesSearchBarWhenScrolling = false
-        
+
         // colors
         settings.barTintColor = .orange
         settings.cancelButtonColor = .white
@@ -73,33 +73,33 @@ class ViewController: UIViewController {
         settings.showDialCode = true
         settings.showFlags = true
         settings.showEmojis = true
-        
+
         countryPicker.settings = settings
-        
+
         present(countryPicker, animated: true, completion: nil)
-        
+
     }
 
 }
 
 // Handle result from Country PickerView
 extension ViewController: CountryPickerDelegate {
-    
+
     func didPickCountry(_ picker: Picker, didSelectCountry country: Country) {
         flagImageView.image = country.flag
         countryTF.text = country.localizedName
     }
-    
+
 }
 
 // Handle result from CountryPickerViewController
 extension ViewController: CountryPickerViewControllerDelegate {
-    
-    func countryPickerController(_ countryPickerController: CountryPickerViewController, didSelectCountry country: Country) {
+
+    func countryPickerController(_ countryPickerController: CountryPickerViewController,
+                                 didSelectCountry country: Country) {
         countryPickerController.dismiss(animated: true, completion: nil)
         flagImageView.image = country.flag
         countryTF.country = country
     }
-    
-}
 
+}
