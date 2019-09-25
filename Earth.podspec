@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.swift_versions   = '5.0'
   s.summary          = 'A custmizable and easy to use framework contains Country Picker with awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
