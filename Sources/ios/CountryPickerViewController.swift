@@ -10,24 +10,19 @@
 import UIKit
 
 public protocol CountryPickerViewControllerDelegate: class {
-
     func countryPickerController(_ countryPickerController: CountryPickerViewController,
                                  didSelectCountry country: Country)
-
 }
 
 public protocol CountryPickerViewControllerDelegateLayout: class {
-
     func countryPickerController(_ countryPickerController: CountryPickerViewController)
-
 }
 
 /// wrapped CountriesViewController in a UINavigationController
 public class CountryPickerViewController: UINavigationController {
-
     public struct Settings {
         // style (only available greater or equals to iOS 11.0)
-        public var prefersLargeTitles: Bool          = true
+        public var prefersLargeTitles: Bool = true
         public var hidesSearchBarWhenScrolling: Bool = true
 
         // colors
@@ -40,12 +35,11 @@ public class CountryPickerViewController: UINavigationController {
         public var searchBarPlaceholder: String = "Search"
 
         // config
-        public var showFlags: Bool    = true
-        public var showEmojis: Bool   = true
+        public var showFlags: Bool = true
+        public var showEmojis: Bool = true
         public var showDialCode: Bool = true
 
         public init() {
-
         }
     }
 
@@ -67,13 +61,11 @@ public class CountryPickerViewController: UINavigationController {
         countriesViewController = CountriesViewController()
         countriesViewController.pickerDelegate = pickerDelegate
         countriesViewController.settings = settings
-        self.viewControllers = [countriesViewController]
+        viewControllers = [countriesViewController]
     }
-
 }
 
 class CountriesViewController: BaseCountryTableViewController {
-
     weak var pickerDelegate: CountryPickerViewControllerDelegate?
 
     private lazy var countries: [Country] = CountryKit.countries
@@ -84,38 +76,33 @@ class CountriesViewController: BaseCountryTableViewController {
 
     private var resultsController: CountryResultsTableController!
 
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         configureSearchController()
 
         let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel,
                                        target: self,
-                                       action: #selector(self.cancel))
+                                       action: #selector(cancel))
         leftItem.tintColor = settings?.cancelButtonColor ?? UIColor.blue
-        self.navigationItem.leftBarButtonItem = leftItem
+        navigationItem.leftBarButtonItem = leftItem
 
-        self.title = settings?.title ?? "Select a country"
+        title = settings?.title ?? "Select a country"
 
         configUI()
     }
 
     func configUI() {
-
         guard let settings = settings else { return }
 
-        self.navigationController?.navigationBar.barTintColor = settings.barTintColor
-
+        navigationController?.navigationBar.barTintColor = settings.barTintColor
     }
 
     @objc func cancel() {
-
-        self.dismiss(animated: true, completion: nil)
-
+        dismiss(animated: true, completion: nil)
     }
 
     func configureSearchController() {
-
         resultsController = CountryResultsTableController()
         resultsController.tableView.delegate = self
         resultsController.settings = settings
@@ -139,11 +126,9 @@ class CountriesViewController: BaseCountryTableViewController {
 
         definesPresentationContext = true
     }
-
 }
 
 extension CountriesViewController {
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return countriesInSections.sectionTitles.count
     }
@@ -174,11 +159,9 @@ extension CountriesViewController {
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
-
 }
 
 extension CountriesViewController {
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
@@ -193,13 +176,10 @@ extension CountriesViewController {
         if let pickerViewController = self.navigationController as? CountryPickerViewController {
             pickerDelegate?.countryPickerController(pickerViewController, didSelectCountry: selectedCountry)
         }
-
     }
-
 }
 
 extension CountriesViewController: UISearchBarDelegate {
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
@@ -207,13 +187,10 @@ extension CountriesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         updateSearchResults(for: searchController)
     }
-
 }
 
 extension CountriesViewController: UISearchResultsUpdating {
-
     func updateSearchResults(for searchController: UISearchController) {
-
         let whitespaceCharacterSet = CharacterSet.whitespaces
         let searchText = searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet).lowercased()
 
@@ -225,14 +202,12 @@ extension CountriesViewController: UISearchResultsUpdating {
         resultsController.filteredCountries = filteredResults
         resultsController.tableView.reloadData()
     }
-
 }
 
 // MARK: - Utils
+
 extension CountriesViewController {
-
     func prepareCountriesInSections() -> (sectionTitles: [String], countriesInSections: [[Country]]) {
-
         let countries = CountryKit.countries
         let collation = UILocalizedIndexedCollation.current()
         var sectionsArray: [[Country]] = []
@@ -241,7 +216,7 @@ extension CountriesViewController {
 
         let sectionTitleCount = collation.sectionTitles.count
 
-        for _ in 0..<sectionTitleCount {
+        for _ in 0 ..< sectionTitleCount {
             sectionsArray.append([])
         }
 
@@ -252,8 +227,7 @@ extension CountriesViewController {
         }
 
         var sectionsToRemove: [Int] = []
-        for index in 0..<sectionTitleCount {
-
+        for index in 0 ..< sectionTitleCount {
             let arrayInSection = sectionsArray[index]
 
             if arrayInSection.count == 0 {

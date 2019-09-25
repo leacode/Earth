@@ -9,7 +9,6 @@
 import UIKit
 
 class CountryResultsTableController: BaseCountryTableViewController {
-
     var filteredCountries: [Country] = []
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,6 +27,5 @@ class CountryResultsTableController: BaseCountryTableViewController {
         configureCell(cell, forCountry: country)
         return cell
     }
-
 }
 #endif

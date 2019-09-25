@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         settings.hidesSearchBarWhenScrolling = false
 
         // colors
-        settings.barTintColor         = .orange
+        settings.barTintColor         = .systemOrange
         settings.cancelButtonColor    = .white
         settings.searchBarTintColor   = .black
         settings.searchBarPlaceholder = "搜索"

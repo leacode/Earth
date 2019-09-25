@@ -10,13 +10,10 @@
 import UIKit
 
 public protocol CountryPickerViewDelegate: class {
-
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country)
-
 }
 
 public class CountryPickerView: UIPickerView {
-
     let countries: [Country] = CountryKit.countries
 
     public weak var pickerDelegate: CountryPickerViewDelegate?
@@ -32,16 +29,15 @@ public class CountryPickerView: UIPickerView {
         super.init(frame: frame)
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        self.delegate = self
-        self.dataSource = self
+        delegate = self
+        dataSource = self
     }
 }
 
 extension CountryPickerView: UIPickerViewDataSource {
-
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -52,7 +48,6 @@ extension CountryPickerView: UIPickerViewDataSource {
 }
 
 extension CountryPickerView: UIPickerViewDelegate {
-
     public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 44.0
     }
@@ -61,7 +56,6 @@ extension CountryPickerView: UIPickerViewDelegate {
                            viewForRow row: Int,
                            forComponent component: Int,
                            reusing view: UIView?) -> UIView {
-
         let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44.0))
 
         let imageView = UIImageView(frame: CGRect(x: 15, y: 12, width: 28.0, height: 20.0))
@@ -87,9 +81,7 @@ extension CountryPickerView: UIPickerViewDelegate {
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
         pickerDelegate?.countryPickerView(self, didSelectCountry: countries[row])
-
     }
 }
 #endif

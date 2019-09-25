@@ -7,30 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DA550862148C48F0008477E /* Earth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DA550812148C4420008477E /* Earth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D11E52C233B45A000937EBF /* Earth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D11E52B233B45A000937EBF /* Earth.framework */; };
+		6D11E52D233B45A000937EBF /* Earth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D11E52B233B45A000937EBF /* Earth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DAD76F62148C33B0026204B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD76F52148C33B0026204B /* AppDelegate.swift */; };
 		6DAD76F82148C33C0026204B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD76F72148C33C0026204B /* ViewController.swift */; };
 		6DAD76FB2148C33C0026204B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAD76F92148C33C0026204B /* Main.storyboard */; };
 		6DAD76FD2148C33D0026204B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAD76FC2148C33D0026204B /* Assets.xcassets */; };
 		6DAD77002148C33D0026204B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAD76FE2148C33D0026204B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6DA550802148C4420008477E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DA5507B2148C4420008477E /* Earth.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6DAD76882148BC290026204B;
-			remoteInfo = "Earth-iOS";
-		};
-		6DA550822148C4420008477E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DA5507B2148C4420008477E /* Earth.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6DAD76E82148C0180026204B;
-			remoteInfo = "Earth-macOS";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6DA550852148C47D0008477E /* CopyFiles */ = {
@@ -39,14 +23,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6DA550862148C48F0008477E /* Earth.framework in CopyFiles */,
+				6D11E52D233B45A000937EBF /* Earth.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6DA5507B2148C4420008477E /* Earth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Earth.xcodeproj; path = ../../Earth.xcodeproj; sourceTree = "<group>"; };
+		6D11E52B233B45A000937EBF /* Earth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Earth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAD76F22148C33B0026204B /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAD76F52148C33B0026204B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DAD76F72148C33C0026204B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,27 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D11E52C233B45A000937EBF /* Earth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6DA5507C2148C4420008477E /* Products */ = {
+		6D11E52A233B45A000937EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DA550812148C4420008477E /* Earth.framework */,
-				6DA550832148C4420008477E /* Earth.framework */,
+				6D11E52B233B45A000937EBF /* Earth.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6DAD76E92148C33B0026204B = {
 			isa = PBXGroup;
 			children = (
-				6DA5507B2148C4420008477E /* Earth.xcodeproj */,
 				6DAD76F42148C33B0026204B /* iOS Example */,
 				6DAD76F32148C33B0026204B /* Products */,
+				6D11E52A233B45A000937EBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,35 +138,12 @@
 			mainGroup = 6DAD76E92148C33B0026204B;
 			productRefGroup = 6DAD76F32148C33B0026204B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6DA5507C2148C4420008477E /* Products */;
-					ProjectRef = 6DA5507B2148C4420008477E /* Earth.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6DAD76F12148C33B0026204B /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6DA550812148C4420008477E /* Earth.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Earth.framework;
-			remoteRef = 6DA550802148C4420008477E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6DA550832148C4420008477E /* Earth.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Earth.framework;
-			remoteRef = 6DA550822148C4420008477E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6DAD76F02148C33B0026204B /* Resources */ = {
@@ -350,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y85J467HQH;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y85J467HQH;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
