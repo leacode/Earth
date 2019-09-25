@@ -9,7 +9,6 @@
 import UIKit
 
 class BaseCountryTableViewController: UITableViewController {
-
     let cellId = "countryCell"
 
     var settings: CountryPickerViewController.Settings?
@@ -23,7 +22,6 @@ class BaseCountryTableViewController: UITableViewController {
     // MARK: - Configuration
 
     func configureCell(_ cell: CountryCell, forCountry country: Country) {
-
         cell.textLabel?.text = country.localizedName + "(\(country.code))"
 
         if settings?.showFlags ?? true {
@@ -46,8 +44,6 @@ class BaseCountryTableViewController: UITableViewController {
         if !subTitle.isEmpty {
             cell.detailTextLabel?.text = subTitle
         }
-
     }
-
 }
 #endif

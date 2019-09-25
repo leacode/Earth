@@ -15,11 +15,11 @@
 
 ## Features
 
-- Support 242 countries with flags, emojis and dial codes
+- Support 242 countries with flags, emojis and dial codes.
 - Support 12 Languages. If it doesn't cover your language, PR is welcomed.
-- CountryTextField class for picking country from a picker view
-- CountryPickerView allows you to select a country from a UITableView
-
+- CountryTextField class for picking country from a picker view.
+- CountryPickerView allows you to select a country from a UITableView.
+- You can support dark mode easily  for iOS 13 by setting corlors in the settings.
 
 ## Example
 
@@ -47,7 +47,7 @@ it, simply add the following line to your Podfile:
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'Earth', '~> 1.1.0'
+pod 'Earth', '~> 1.2.0'
 end
 ```
 
@@ -71,18 +71,27 @@ $ brew install carthage
 To integrate Earth into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "leacode/Earth" ~> 1.1.0
+github "leacode/Earth" ~> 1.2.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Earth.framework` into your Xcode project.
 
 ### Swift Package Manager
 
+- For iOS/ MacOS:
+
+1. Star this repo.
+2. Login your github account in Xcode.
+3. Go to Swift Packages tab in your project settings, click add button and search Earch, add it to your project.
+4. Add Earth.framework after SPM finished downloading the source code.
+
+- For server side:
+
 Since [Swift Package Manager](https://swift.org/package-manager/) is not support binding resources into frameworks. Vector flags are not available in this way.
 
 ```
 dependencies: [
-    .package(url: "https://github.com/leacode/Earth.git", from: "1.1.0"),
+    .package(url: "https://github.com/leacode/Earth.git", from: "1.2.0"),
 ]
 ```
 

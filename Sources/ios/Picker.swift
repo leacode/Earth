@@ -10,15 +10,11 @@
 import UIKit
 
 public protocol CountryPickerDelegate: class {
-
     func didPickCountry(_ picker: Picker, didSelectCountry country: Country)
-
 }
 
 public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
     public struct Settings {
-
         // style
         public var barStyle = UIBarStyle.default
         public var displayCancelButton: Bool = true
@@ -41,7 +37,6 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         public var rowHeight: CGFloat = 44.0
 
         public init() {
-
         }
     }
 
@@ -52,7 +47,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
 
     private var pickerView: UIPickerView!
 
-    @IBOutlet public weak var textField: UITextField!
+    @IBOutlet public var textField: UITextField!
 
     var items = [Any]()
 
@@ -63,10 +58,10 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         self.pickerType = pickerType
 
         switch pickerType {
-        case .default(let items):
+        case let .default(items):
             self.items = items
         default:
-            self.items = CountryKit.countries
+            items = CountryKit.countries
         }
 
         self.textField = textField
@@ -109,7 +104,6 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         }
 
         if settings.displayCancelButton {
-
             if let cancelButtonText = settings.cancelButtonText {
                 cancelButton = UIBarButtonItem(title: cancelButtonText,
                                                style: UIBarButtonItem.Style.plain,
@@ -137,11 +131,11 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         textField?.resignFirstResponder()
 
         if let item = items.first, item is String {
-            if self.textField.text?.count == 0 || !self.items.contains(where: { (obj: Any) -> Bool in
+            if textField.text?.count == 0 || !items.contains(where: { (obj: Any) -> Bool in
                 (obj as? String) == textField.text
             }) {
-                self.setValue(index: -1)
-                self.textField.placeholder = self.settings.placeholder
+                setValue(index: -1)
+                textField.placeholder = settings.placeholder
             }
         } else {
             let selectedRow = pickerView.selectedRow(inComponent: 0)
@@ -150,41 +144,39 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
             }
         }
 
-        self.sendActions(for: UIControl.Event.valueChanged)
+        sendActions(for: UIControl.Event.valueChanged)
     }
 
     @objc @IBAction func cancel(barButton: UIBarButtonItem) {
         textField?.resignFirstResponder()
 
         if let item = items.first, item is String {
-            if self.textField.text?.count == 0 ||
-                !self.items.contains(where: { (obj: Any) -> Bool in
-                (obj as? String) == textField.text
-            }) {
-                self.textField.placeholder = self.settings.placeholder
+            if textField.text?.count == 0 ||
+                !items.contains(where: { (obj: Any) -> Bool in
+                    (obj as? String) == textField.text
+                }) {
+                textField.placeholder = settings.placeholder
             }
         }
     }
 
     func setValue(index: Int) {
         if index > 0 {
-            self.pickerView(pickerView, didSelectRow: index, inComponent: 0)
+            pickerView(pickerView, didSelectRow: index, inComponent: 0)
         } else {
-            self.textField.text = nil
+            textField.text = nil
         }
     }
 
     func getValue(index: Int) {
-
     }
 
     func scrollToCountry(country: Country) {
         if let countries = self.items as? [Country] {
-
             if let index = countries.firstIndex(where: { (aCountry: Country) -> Bool in
-                return country.code == aCountry.code
+                country.code == aCountry.code
             }) {
-                self.pickerView.selectRow(index, inComponent: 0, animated: false)
+                pickerView.selectRow(index, inComponent: 0, animated: false)
             }
         }
     }
@@ -202,8 +194,8 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     // MARK: - UIPickerViewDelegate
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if let item = items.first, item is String { self.textField.text = items[row] as? String }
-        self.sendActions(for: UIControl.Event.valueChanged)
+        if let item = items.first, item is String { textField.text = items[row] as? String }
+        sendActions(for: UIControl.Event.valueChanged)
     }
 
     public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -214,7 +206,6 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
                            viewForRow row: Int,
                            forComponent component: Int,
                            reusing view: UIView?) -> UIView {
-
         switch pickerType! {
         case .default:
             let titleView = UILabel()
@@ -279,7 +270,6 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     }
 
     var dialCodeLabel: UILabel {
-
         let dialcodeLabelFrame = CGRect(x: UIScreen.main.bounds.size.width - dialCodeWidth - 10,
                                         y: 0,
                                         width: dialCodeWidth,
@@ -295,7 +285,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
 
     public func textFieldShouldBeginEditing(_ aTextField: UITextField) -> Bool {
         if items.count > 0 {
-            self.show(sender: aTextField)
+            show(sender: aTextField)
             return true
         } else {
             return false
@@ -303,12 +293,12 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
     }
 
     public func textFieldDidBeginEditing(_ aTextField: UITextField) {
-        self.sendActions(for: UIControl.Event.editingDidBegin)
+        sendActions(for: UIControl.Event.editingDidBegin)
     }
 
     public func textFieldDidEndEditing(_ aTextField: UITextField) {
         aTextField.isUserInteractionEnabled = true
-        self.sendActions(for: UIControl.Event.editingDidEnd)
+        sendActions(for: UIControl.Event.editingDidEnd)
     }
 
     public func textField(_ textField: UITextField,
@@ -316,6 +306,5 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
                           replacementString string: String) -> Bool {
         return false
     }
-
 }
 #endif
