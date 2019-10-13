@@ -53,8 +53,9 @@ class ViewController: UIViewController {
 
     @IBAction func selectCountry(_ sender: Any) {
 
-        let countryPicker = CountryPickerViewController()
-        countryPicker.pickerDelegate = self
+        let countryPickerVC = CountryPickerViewController()
+//        countryPickerVC.modalPresentationStyle = .fullScreen
+        countryPickerVC.pickerDelegate = self
 
         // Config the appearance of CountryPickerViewController
 
@@ -74,9 +75,9 @@ class ViewController: UIViewController {
         settings.showFlags            = true
         settings.showEmojis           = true
 
-        countryPicker.settings = settings
+        countryPickerVC.settings = settings
 
-        present(countryPicker, animated: true, completion: nil)
+        present(countryPickerVC, animated: true, completion: nil)
 
     }
 

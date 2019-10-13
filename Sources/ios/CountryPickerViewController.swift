@@ -58,6 +58,10 @@ public class CountryPickerViewController: UINavigationController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 13.0, *) {
+            isModalInPresentation = true
+        }
+
         countriesViewController = CountriesViewController()
         countriesViewController.pickerDelegate = pickerDelegate
         countriesViewController.settings = settings
@@ -121,7 +125,11 @@ class CountriesViewController: BaseCountryTableViewController {
             tableView.tableHeaderView = searchController.searchBar
         }
 
-        searchController.dimsBackgroundDuringPresentation = false
+        if #available(iOS 9.1, *) {
+            searchController.obscuresBackgroundDuringPresentation = false
+        } else {
+            searchController.dimsBackgroundDuringPresentation = false
+        }
         searchController.searchBar.delegate = self
 
         definesPresentationContext = true
