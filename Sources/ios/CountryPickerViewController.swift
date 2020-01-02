@@ -9,15 +9,18 @@
 #if os(iOS)
 import UIKit
 
+// MARK: - CountryPickerViewControllerDelegate
 public protocol CountryPickerViewControllerDelegate: class {
     func countryPickerController(_ countryPickerController: CountryPickerViewController,
                                  didSelectCountry country: Country)
 }
 
+// MARK: - CountryPickerViewControllerDelegateLayout
 public protocol CountryPickerViewControllerDelegateLayout: class {
     func countryPickerController(_ countryPickerController: CountryPickerViewController)
 }
 
+// MARK: - CountryPickerViewController
 /// wrapped CountriesViewController in a UINavigationController
 public class CountryPickerViewController: UINavigationController {
     public struct Settings {
@@ -69,6 +72,7 @@ public class CountryPickerViewController: UINavigationController {
     }
 }
 
+// MARK: - CountriesViewController
 class CountriesViewController: BaseCountryTableViewController {
     weak var pickerDelegate: CountryPickerViewControllerDelegate?
 
@@ -80,6 +84,8 @@ class CountriesViewController: BaseCountryTableViewController {
 
     private var resultsController: CountryResultsTableController!
 
+    // MARK: - Life Cycle
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,15 +101,13 @@ class CountriesViewController: BaseCountryTableViewController {
 
         configUI()
     }
+    
+    // MARK: - Config
 
     func configUI() {
         guard let settings = settings else { return }
 
         navigationController?.navigationBar.barTintColor = settings.barTintColor
-    }
-
-    @objc func cancel() {
-        dismiss(animated: true, completion: nil)
     }
 
     func configureSearchController() {
@@ -134,8 +138,15 @@ class CountriesViewController: BaseCountryTableViewController {
 
         definesPresentationContext = true
     }
+    
+    // MARK: - Actions
+    
+    @objc func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
+// MARK: - UITableViewDatasource
 extension CountriesViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return countriesInSections.sectionTitles.count
@@ -155,20 +166,9 @@ extension CountriesViewController {
 
         return cell
     }
-
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return countriesInSections.sectionTitles
-    }
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return countriesInSections.sectionTitles[section]
-    }
-
-    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return index
-    }
 }
 
+// MARK: - UITableViewDelegate
 extension CountriesViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -185,8 +185,21 @@ extension CountriesViewController {
             pickerDelegate?.countryPickerController(pickerViewController, didSelectCountry: selectedCountry)
         }
     }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return countriesInSections.sectionTitles
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return countriesInSections.sectionTitles[section]
+    }
+
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
 }
 
+// MARK: - UISearchBarDelegate
 extension CountriesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -255,5 +268,4 @@ extension CountriesViewController {
         return (sectionIndexTitles, sectionsArray)
     }
 }
-
 #endif

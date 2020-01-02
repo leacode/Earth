@@ -13,7 +13,8 @@ public protocol CountryPickerDelegate: class {
     func didPickCountry(_ picker: Picker, didSelectCountry country: Country)
 }
 
-public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+// MARK: - Picker
+public class Picker: UIControl {
     public struct Settings {
         // style
         public var barStyle = UIBarStyle.default
@@ -44,12 +45,10 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
 
     public var settings: Settings = Settings()
     private var pickerType: PickerType!
+    var items = [Any]()
 
     private var pickerView: UIPickerView!
-
     @IBOutlet public var textField: UITextField!
-
-    var items = [Any]()
 
     public convenience init(textField: UITextField?,
                             pickerType: PickerType = .country) {
@@ -68,6 +67,72 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         self.textField?.delegate = self
     }
 
+    
+
+    func setValue(index: Int) {
+        if index > 0 {
+            pickerView(pickerView, didSelectRow: index, inComponent: 0)
+        } else {
+            textField.text = nil
+        }
+    }
+
+    func getValue(index: Int) {
+    }
+
+    func scrollToCountry(country: Country) {
+        if let countries = self.items as? [Country] {
+            if let index = countries.firstIndex(where: { (aCountry: Country) -> Bool in
+                country.code == aCountry.code
+            }) {
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+        }
+    }
+    
+    // MARK: - UI Components
+
+    let flagWidth: CGFloat = 28.0
+    let flagHeight: CGFloat = 20.0
+    let dialCodeWidth: CGFloat = 60.0
+
+    var flagImageView: UIImageView {
+        let imageView = UIImageView(frame: CGRect(x: 15,
+                                                  y: settings.rowHeight / 2 - flagHeight / 2,
+                                                  width: flagWidth,
+                                                  height: flagHeight))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
+
+    var countryNameLabel: UILabel {
+        let nameLabelFrame = CGRect(x: 15 + 28 + 8,
+                                    y: 0,
+                                    width: UIScreen.main.bounds.size.width - flagWidth - 25.0 - dialCodeWidth,
+                                    height: settings.rowHeight)
+        let nameLabel = UILabel(frame: nameLabelFrame)
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.7
+        nameLabel.numberOfLines = 2
+        nameLabel.font = settings.cellFont
+        nameLabel.textColor = .black
+
+        return nameLabel
+    }
+
+    var dialCodeLabel: UILabel {
+        let dialcodeLabelFrame = CGRect(x: UIScreen.main.bounds.size.width - dialCodeWidth - 10,
+                                        y: 0,
+                                        width: dialCodeWidth,
+                                        height: settings.rowHeight)
+        let dialcodeLabel = UILabel(frame: dialcodeLabelFrame)
+        dialcodeLabel.font = settings.cellFont
+        dialcodeLabel.textColor = .black
+
+        return dialcodeLabel
+    }
+    
+    // MARK: - Actions
     private var doneButton: UIBarButtonItem!
     private var cancelButton: UIBarButtonItem!
     @IBAction public func show(sender: Any) {
@@ -126,7 +191,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
         textField?.inputView = pickerView
         textField?.inputAccessoryView = toolbar
     }
-
+    
     @objc func done(barButton: UIBarButtonItem) {
         textField?.resignFirstResponder()
 
@@ -159,40 +224,48 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
             }
         }
     }
+}
 
-    func setValue(index: Int) {
-        if index > 0 {
-            pickerView(pickerView, didSelectRow: index, inComponent: 0)
+// MARK: - UITextFieldDelegate
+extension Picker: UITextFieldDelegate {
+    public func textFieldShouldBeginEditing(_ aTextField: UITextField) -> Bool {
+        if items.count > 0 {
+            show(sender: aTextField)
+            return true
         } else {
-            textField.text = nil
+            return false
         }
     }
 
-    func getValue(index: Int) {
+    public func textFieldDidBeginEditing(_ aTextField: UITextField) {
+        sendActions(for: UIControl.Event.editingDidBegin)
     }
 
-    func scrollToCountry(country: Country) {
-        if let countries = self.items as? [Country] {
-            if let index = countries.firstIndex(where: { (aCountry: Country) -> Bool in
-                country.code == aCountry.code
-            }) {
-                pickerView.selectRow(index, inComponent: 0, animated: false)
-            }
-        }
+    public func textFieldDidEndEditing(_ aTextField: UITextField) {
+        aTextField.isUserInteractionEnabled = true
+        sendActions(for: UIControl.Event.editingDidEnd)
     }
 
-    // MARK: - UIPickerViewDataSource
+    public func textField(_ textField: UITextField,
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
+        return false
+    }
+}
 
+// MARK: - UIPickerViewDataSource
+extension Picker: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return items.count
     }
+}
 
-    // MARK: - UIPickerViewDelegate
-
+// MARK: - UIPickerViewDelegate
+extension Picker: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let item = items.first, item is String { textField.text = items[row] as? String }
         sendActions(for: UIControl.Event.valueChanged)
@@ -240,71 +313,7 @@ public class Picker: UIControl, UIPickerViewDelegate, UIPickerViewDataSource, UI
             return itemView
         }
     }
-
-    let flagWidth: CGFloat = 28.0
-    let flagHeight: CGFloat = 20.0
-    let dialCodeWidth: CGFloat = 60.0
-
-    var flagImageView: UIImageView {
-        let imageView = UIImageView(frame: CGRect(x: 15,
-                                                  y: settings.rowHeight / 2 - flagHeight / 2,
-                                                  width: flagWidth,
-                                                  height: flagHeight))
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }
-
-    var countryNameLabel: UILabel {
-        let nameLabelFrame = CGRect(x: 15 + 28 + 8,
-                                    y: 0,
-                                    width: UIScreen.main.bounds.size.width - flagWidth - 25.0 - dialCodeWidth,
-                                    height: settings.rowHeight)
-        let nameLabel = UILabel(frame: nameLabelFrame)
-        nameLabel.adjustsFontSizeToFitWidth = true
-        nameLabel.minimumScaleFactor = 0.7
-        nameLabel.numberOfLines = 2
-        nameLabel.font = settings.cellFont
-        nameLabel.textColor = .black
-
-        return nameLabel
-    }
-
-    var dialCodeLabel: UILabel {
-        let dialcodeLabelFrame = CGRect(x: UIScreen.main.bounds.size.width - dialCodeWidth - 10,
-                                        y: 0,
-                                        width: dialCodeWidth,
-                                        height: settings.rowHeight)
-        let dialcodeLabel = UILabel(frame: dialcodeLabelFrame)
-        dialcodeLabel.font = settings.cellFont
-        dialcodeLabel.textColor = .black
-
-        return dialcodeLabel
-    }
-
-    // MARK: - UITextFieldDelegate
-
-    public func textFieldShouldBeginEditing(_ aTextField: UITextField) -> Bool {
-        if items.count > 0 {
-            show(sender: aTextField)
-            return true
-        } else {
-            return false
-        }
-    }
-
-    public func textFieldDidBeginEditing(_ aTextField: UITextField) {
-        sendActions(for: UIControl.Event.editingDidBegin)
-    }
-
-    public func textFieldDidEndEditing(_ aTextField: UITextField) {
-        aTextField.isUserInteractionEnabled = true
-        sendActions(for: UIControl.Event.editingDidEnd)
-    }
-
-    public func textField(_ textField: UITextField,
-                          shouldChangeCharactersIn range: NSRange,
-                          replacementString string: String) -> Bool {
-        return false
-    }
 }
+
+
 #endif

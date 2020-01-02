@@ -7,65 +7,68 @@
 //
 
 #if os(iOS)
-import UIKit
+    import UIKit
 
-@objc public class CountryTextField: UITextField {
+    @objc public class CountryTextField: UITextField {
+        var picker: Picker!
 
-    var picker: Picker!
+        public var country: Country! {
+            didSet {
+                text = country.localizedName
+                if isEditing {
+                    picker?.scrollToCountry(country: country)
+                }
+            }
+        }
 
-    public var country: Country! {
-        didSet {
-            self.text = country.localizedName
-            if self.isEditing {
-                picker?.scrollToCountry(country: country)
+        public var settings: Picker.Settings! {
+            didSet {
+                picker?.settings = settings
+            }
+        }
+
+        public weak var pickerDelegate: CountryPickerDelegate?
+
+        public override init(frame: CGRect) {
+            super.init(frame: frame)
+        }
+
+        public required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+
+            picker = Picker(textField: self)
+            picker?.delegate = self
+
+            NotificationCenter
+                .default
+                .addObserver(
+                    self,
+                    selector: #selector(textFieldDidBeginEditing(textField:)),
+                    name: UITextField.textDidBeginEditingNotification,
+                    object: self
+                )
+        }
+
+        deinit {
+            NotificationCenter
+                .default
+                .removeObserver(self,
+                                name: UITextField.textDidBeginEditingNotification,
+                                object: self)
+        }
+
+        @objc private func textFieldDidBeginEditing(textField: UITextField) {
+            if country != nil {
+                picker.scrollToCountry(country: country)
             }
         }
     }
 
-    public var settings: Picker.Settings! {
-        didSet {
-            picker?.settings = settings
+    extension CountryTextField: CountryPickerDelegate {
+        public func didPickCountry(_ picker: Picker, didSelectCountry country: Country) {
+            self.country = country
+            pickerDelegate?.didPickCountry(picker, didSelectCountry: country)
         }
     }
-
-    public weak var pickerDelegate: CountryPickerDelegate?
-
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        picker = Picker(textField: self)
-        picker?.delegate = self
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.textFieldDidBeginEditing(textField:)),
-                                               name: UITextField.textDidBeginEditingNotification,
-                                               object: self)
-
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: UITextField.textDidBeginEditingNotification, object: self)
-    }
-
-    @objc private func textFieldDidBeginEditing(textField: UITextField) {
-        if country != nil {
-            picker.scrollToCountry(country: country)
-        }
-    }
-}
-
-extension CountryTextField: CountryPickerDelegate {
-
-    public func didPickCountry(_ picker: Picker, didSelectCountry country: Country) {
-        self.country = country
-        pickerDelegate?.didPickCountry(picker, didSelectCountry: country)
-    }
-
-}
 
 #endif

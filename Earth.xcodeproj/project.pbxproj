@@ -127,8 +127,8 @@
 				6DA550A52148C6100008477E /* Picker.swift */,
 				6DA550A72148C6100008477E /* UIImage+Scale.swift */,
 				6DA550A82148C6100008477E /* BaseCountryTableViewController.swift */,
-				6DA550A62148C6100008477E /* CountryResultsTableController.swift */,
 				6DA550A92148C6100008477E /* CountryPickerViewController.swift */,
+				6DA550A62148C6100008477E /* CountryResultsTableController.swift */,
 				6DA550AA2148C6100008477E /* CountryTextField.swift */,
 				6DA550AB2148C6100008477E /* CountryCell.swift */,
 			);
