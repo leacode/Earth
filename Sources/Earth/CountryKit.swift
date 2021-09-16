@@ -18,16 +18,17 @@ public class CountryKit {
     #if os(iOS) || os(macOS)
     public static func flag(countryCode: String) -> PlatformImage? {
         #if os(iOS)
-        return UIImage(named: countryCode, in: frameworkBundle, compatibleWith: nil)
+        return UIImage(named: countryCode, in: .module, with: nil)
         #elseif os(macOS)
-        return frameworkBundle.image(forResource: countryCode.uppercased())
+        return Bundle.module.image(forResource: countryCode.uppercased())
         #endif
     }
     #endif
 
     public static var countries: [Country] = {
-        guard let path = frameworkBundle.path(forResource: "countries", ofType: "json"),
-            let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path)),
+        
+        guard let path = Bundle.module.url(forResource: "countries", withExtension: "json"),
+            let jsonData = try? Data(contentsOf: path),
             let countriesFromData = try? JSONDecoder().decode([Country].self, from: jsonData) else {
             return []
         }

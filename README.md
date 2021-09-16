@@ -47,7 +47,7 @@ it, simply add the following line to your Podfile:
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'Earth', '~> 1.7.0'
+pod 'Earth', '~> 1.6.0'
 end
 ```
 
