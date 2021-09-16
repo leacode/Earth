@@ -56,7 +56,7 @@ extension CountryPickerView: UIPickerViewDelegate {
                            viewForRow row: Int,
                            forComponent component: Int,
                            reusing view: UIView?) -> UIView {
-        let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44.0))
+        let itemView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.module1.bounds.size.width, height: 44.0))
 
         let imageView = UIImageView(frame: CGRect(x: 15, y: 12, width: 28.0, height: 20.0))
         imageView.image = countries[row].flag

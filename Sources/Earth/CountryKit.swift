@@ -14,6 +14,7 @@ import UIKit
 import AppKit
 #endif
 
+@available(iOS 13.0, *)
 public class CountryKit {
     #if os(iOS) || os(macOS)
     public static func flag(countryCode: String) -> PlatformImage? {

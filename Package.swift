@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,12 +6,15 @@ import PackageDescription
 let package = Package(
     name: "Earth",
     defaultLocalization: "en",
+    platforms: [.iOS(.v13)],
     products: [
         .library(name: "Earth", targets: ["Earth"])
     ],
-    dependencies: [],
     targets: [
         .target(
-            name: "Earth", dependencies: [], resources: [.process("Resources/countries.json"))
-    ]
+            name: "Earth",
+            resources: [.process("Resources")]
+        )
+    ],
+    swiftLanguageVersions: [.v5]
 )

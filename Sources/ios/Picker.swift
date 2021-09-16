@@ -108,7 +108,7 @@ public class Picker: UIControl {
     var countryNameLabel: UILabel {
         let nameLabelFrame = CGRect(x: 15 + 28 + 8,
                                     y: 0,
-                                    width: UIScreen.main.bounds.size.width - flagWidth - 25.0 - dialCodeWidth,
+                                    width: UIScreen.module1.bounds.size.width - flagWidth - 25.0 - dialCodeWidth,
                                     height: settings.rowHeight)
         let nameLabel = UILabel(frame: nameLabelFrame)
         nameLabel.adjustsFontSizeToFitWidth = true
@@ -121,7 +121,7 @@ public class Picker: UIControl {
     }
 
     var dialCodeLabel: UILabel {
-        let dialcodeLabelFrame = CGRect(x: UIScreen.main.bounds.size.width - dialCodeWidth - 10,
+        let dialcodeLabelFrame = CGRect(x: UIScreen.module1.bounds.size.width - dialCodeWidth - 10,
                                         y: 0,
                                         width: dialCodeWidth,
                                         height: settings.rowHeight)
@@ -291,7 +291,7 @@ extension Picker: UIPickerViewDelegate {
         case .country:
             let itemView = UIView(frame: CGRect(x: 0,
                                                 y: 0,
-                                                width: UIScreen.main.bounds.size.width,
+                                                width: UIScreen.module1.bounds.size.width,
                                                 height: settings.rowHeight))
 
             // flag image view
