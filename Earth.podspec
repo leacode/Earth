@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Earth'
-  s.version          = '1.6.0'
+  s.version          = '1.7.0'
   s.swift_versions   = '5.0'
   s.summary          = 'A custmizable and easy to use framework contains Country Picker with awesome vector flags. Support both iOS and MacOS'
   s.description      = <<-DESC
@@ -22,14 +22,14 @@ It offers different kind of pickers for picking infomations about countries etc.
   s.source           = { :git => 'https://github.com/leacode/Earth.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
   s.osx.deployment_target  = '10.10'
   
   s.source_files       = 'Sources/Earth/*.swift'
   s.ios.source_files   = 'Sources/ios/*.swift'
   
   s.resource_bundles = {
-    'Earth' => ['Resources/*', 'Resources/*.lproj/*.strings', 'Resources/*.xcassets',]
+    'Earth' => ['Sources/Earth/Resources/*', 'Sources/Earth/Resources/*.lproj/*.strings', 'Sources/Earth/Resources/*.xcassets',]
   }
   
   s.ios.framework  = 'UIKit', 'Foundation'

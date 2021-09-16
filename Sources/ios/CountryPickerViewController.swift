@@ -10,13 +10,13 @@
 import UIKit
 
 // MARK: - CountryPickerViewControllerDelegate
-public protocol CountryPickerViewControllerDelegate: class {
+public protocol CountryPickerViewControllerDelegate: AnyObject {
     func countryPickerController(_ countryPickerController: CountryPickerViewController,
                                  didSelectCountry country: Country)
 }
 
 // MARK: - CountryPickerViewControllerDelegateLayout
-public protocol CountryPickerViewControllerDelegateLayout: class {
+public protocol CountryPickerViewControllerDelegateLayout: AnyObject {
     func countryPickerController(_ countryPickerController: CountryPickerViewController)
 }
 

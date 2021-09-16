@@ -9,7 +9,7 @@
 #if os(iOS)
 import UIKit
 
-public protocol CountryPickerViewDelegate: class {
+public protocol CountryPickerViewDelegate: AnyObject {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country)
 }
 

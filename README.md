@@ -27,7 +27,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 8.0+ / macOS 10.10+ 
+- iOS 12.0+ / macOS 10.10+ 
 - Swift 5.0+
 
 ## Installation
@@ -47,7 +47,7 @@ it, simply add the following line to your Podfile:
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'Earth', '~> 1.6.0'
+pod 'Earth', '~> 1.7.0'
 end
 ```
 
